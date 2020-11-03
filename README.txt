@@ -7,12 +7,12 @@ Please read this before working on the project !
 	- Master : the latest approved version, no bugs, only merge approved features
 	- Dev : the main work branch, used for merge and test every changes
 	- [name] (others) : create a new branch for each features
-	- Merge : to merge commit from the other repo (floppy)
+	- Merge : to merge commit from the other repo
 
 
 > Commit convention
-commit msg :		[branch name] [keyword(s)] [TA]? : [title]
-commit description :	short description (wich features/bug/ect..)
+commit msg :		[keyword(s)] [TA]? : [title]
+commit description :	short description (wich features/bug/ect..)   // Optionnal
 
 keywords :
 - feat	: new feature
@@ -25,6 +25,9 @@ keywords :
 - asset	: import new assets
 
 - TA	: tested and approved by the developper. Only for keywords : feat/LD
+
+Exemple : [feat/fix] PlayerController + fix index error NbrPlayers
+	  [LD/assets] Player Prefabs + Import player animations
 
 
 -- UNITY --
