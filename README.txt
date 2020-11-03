@@ -22,7 +22,8 @@ keywords :
 - refactor : editing code for make it cleaner
 - LD 	: editing scene/prefabs and integration
 - debug : tools or display for debugging
-- asset	: import new assets
+- asset	: import new in game assets
+- import : import other files (different that doc or assets) like code packages
 
 - TA	: tested and approved by the developper. Only for keywords : feat/LD
 
