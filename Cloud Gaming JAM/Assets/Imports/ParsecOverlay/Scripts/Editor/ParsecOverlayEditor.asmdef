@@ -1,9 +1,0 @@
-﻿{
-	"name": "ParsecOverlayEditor",
-	"references": [
-		"ParsecOverlay"
-	],
-	"includePlatforms": [
-		"Editor"
-	]
-}
