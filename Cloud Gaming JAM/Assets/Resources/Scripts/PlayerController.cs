@@ -5,6 +5,7 @@ using Rewired;
 
 public class PlayerController
 {
+    public bool isPlaying;
     public int playerId;
     public Player player;
     public PlayerMoveState state;
@@ -41,7 +42,6 @@ public class PlayerController
             dir.y = player.GetAxis("moveVertical");
             //return (new Vector2(GetMoveDir(), 0));
         }
-        
         Debug.Log(dir);
         return dir;
     }
