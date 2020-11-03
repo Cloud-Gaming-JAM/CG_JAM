@@ -8,7 +8,7 @@ public class PlayerController
     public int playerId;
     public Player player;
     public PlayerMoveState state;
-
+    
     private Vector2 lastInputValue;
 
     // public PlayerController(int id)
@@ -29,26 +29,31 @@ public class PlayerController
 
     public Vector2 GetPlayerInput()
     {
+        Vector2 dir = new Vector2(0,0);
         if (state == PlayerMoveState.horizontal)
         {
-            return (new Vector2(0, GetMoveDir()));
+            dir.x = player.GetAxis("moveHorizontal");
+            //return (new Vector2(0, GetMoveDir()));
         }
-            
-        else if (state == PlayerMoveState.vertical)
+        
+        else if (state == PlayerMoveState.vertical) // antihoraire pour monter
         {
-            return (new Vector2(GetMoveDir(), 0));
+            dir.y = player.GetAxis("moveVertical");
+            //return (new Vector2(GetMoveDir(), 0));
         }
-        return Vector2.zero;
+        
+        Debug.Log(dir);
+        return dir;
     }
 
-    private float GetMoveDir()
+    private float GetMoveDir() // for roll joystick control - WIP
     {
         Vector2 newValue = new Vector2();
         newValue = player.GetAxis2D("moveHorizontal", "moveVertical");
         lastInputValue = newValue;
         return Vector2.Distance(lastInputValue, newValue);
 
-        //player.GetAxisDelta("moveHorizontal")
+        //player.GetAxisDelta("moveHorizontal");
         //return lastInputValue + player.GetAxis("moveHorizontal");
     }
 }
