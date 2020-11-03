@@ -8,27 +8,11 @@ public class RaftController : MonoBehaviour
     [Range(0.2f, 5f)] public float raftSpeedMultiplier = 1f;
     #endregion
     #region PrivateVariables
-    //List<PlayerController> playersOnRaft = new List<PlayerController>(2);
+    List<PlayerController> playersOnRaft = new List<PlayerController>();
     Rigidbody2D raftRigidBody;
     #endregion
     #region PrivateMethods
-    // Start is called before the first frame update
-    void Start()
-    {
-        raftRigidBody = GetComponent<Rigidbody2D>();
 
-        PreStartCheck();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateRaftSpeed();
-    }
-    void FixedUpdate()
-    {
-        Debug.Log(Input.GetAxisRaw("Horizontal"));
-        Debug.Log(Input.GetAxisRaw("Vertical"));
-    }
     //Checks if all variables a set up properly
     void PreStartCheck()
     {
@@ -36,16 +20,53 @@ public class RaftController : MonoBehaviour
         {
             Debug.LogError("Raft dosen't contain a RigidBody component");
         }
+        if(playersOnRaft.Count == 0)
+        {
+            Debug.LogError("Raft has no players on board");
+        }
     }
-    #endregion
-    #region PublicMethods
+
     ///<summary>
     ///Updates the raft instance's speed, meant to be used in a Update() loop, takes an Input Vector.
     ///<param name="calculatedInput">Mixed input vector.</param>
     ///</summary>
-    public void UpdateRaftSpeed()
+    void UpdateRaftSpeed()
     {
-        raftRigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * raftSpeedMultiplier, Input.GetAxisRaw("Vertical") *  raftSpeedMultiplier);
+        Vector2 raftMixedInput = new Vector2(0f,0f);
+        foreach(PlayerController instance in playersOnRaft)
+        {
+            raftMixedInput += instance.GetPlayerInput();
+        }
+        raftMixedInput.Normalize();
+        raftRigidBody.velocity = new Vector2(raftMixedInput.x*raftSpeedMultiplier, raftMixedInput.y*raftSpeedMultiplier);
     }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        raftRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        foreach(PlayerController instance in GetComponents<PlayerController>())
+        {
+            playersOnRaft.Add(instance);
+        }
+        PreStartCheck();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateRaftSpeed();
+    }
+
+    void FixedUpdate()
+    {
+        /* Shows axis values in console
+        Debug.Log(Input.GetAxisRaw("Horizontal"));
+        Debug.Log(Input.GetAxisRaw("Vertical"));
+        */
+    }
+    #endregion
+    #region PublicMethods
+    
     #endregion
 }
