@@ -6,7 +6,7 @@ public class EndLine : MonoBehaviour
 {
     List<PlayerController> playersFinished = new List<PlayerController>();
 
-    void OnTriggerEnter(Collider2D player)
+    void OnTrigger2DEnter(Collider2D player)
     {
         if (player.GetComponent<PlayerController>() != null && !playersFinished.Contains(player.GetComponent<PlayerController>()))
         {
