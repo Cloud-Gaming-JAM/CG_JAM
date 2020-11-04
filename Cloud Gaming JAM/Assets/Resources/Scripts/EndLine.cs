@@ -19,6 +19,6 @@ public class EndLine : MonoBehaviour
 
     void EndGame(/*int WinnerID*/)
     {
-        Debug.Log("Race Finished !");
+        Debug.Log("The winners are ... team " + LevelManager.instance.winnerTeam);
     }
 }

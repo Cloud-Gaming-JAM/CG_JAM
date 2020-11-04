@@ -4,15 +4,15 @@ using UnityEngine;
 public class RaftController : MonoBehaviour
 {
     #region PublicVariables
-    //Raft's maximum speed, values below 1 will slow down the raft
-    [Range(0.2f, 5f)] public float raftSpeedMultiplier = 1f;
+    public Rigidbody2D raftRigidBody;
+    public float raftSpeedMultiplier = 1f;
+    
+    public List<PlayerController> playersOnRaft = new List<PlayerController>();
     [HideInInspector] public int teamId;
     #endregion
     
     #region PrivateVariables
-    public List<PlayerController> playersOnRaft = new List<PlayerController>();
-    
-    Rigidbody2D raftRigidBody;
+
     #endregion
     
     #region PrivateMethods
@@ -44,11 +44,12 @@ public class RaftController : MonoBehaviour
         raftMixedInput *= raftSpeedMultiplier;
         raftRigidBody.velocity = raftMixedInput;
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
         raftRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        raftSpeedMultiplier = LevelManager.instance.raftSpeedMultiplier;
     }
 
     // Update is called once per frame
