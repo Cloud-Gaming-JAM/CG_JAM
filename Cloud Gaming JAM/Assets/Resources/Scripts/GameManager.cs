@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameState gameState;
     
-    public RaftController[] rafts = new RaftController[2];
+    //public RaftController[] rafts = new RaftController[2];
     public PlayerController[] players = new PlayerController[4];
 
     private void Awake()
@@ -22,11 +22,6 @@ public class GameManager : MonoBehaviour
     void Init()
     {
         instance = this;
-    }
-
-    public void AddNewPlayer(int playerId, int teamToJoin)
-    {
-        players[playerId].teamId = teamToJoin;
     }
 
     public int GetNbrController()

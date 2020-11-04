@@ -8,7 +8,8 @@ public class RaftController : MonoBehaviour
     [Range(0.2f, 5f)] public float raftSpeedMultiplier = 1f;
     #endregion
     #region PrivateVariables
-    List<PlayerController> playersOnRaft = new List<PlayerController>();
+    public List<PlayerController> playersOnRaft = new List<PlayerController>();
+    
     Rigidbody2D raftRigidBody;
     #endregion
     #region PrivateMethods
@@ -36,6 +37,7 @@ public class RaftController : MonoBehaviour
         foreach(PlayerController instance in playersOnRaft)
         {
             raftMixedInput += instance.GetPlayerInput();
+            Debug.Log(instance.GetPlayerInput());
         }
         raftMixedInput.Normalize();
         raftRigidBody.velocity = new Vector2(raftMixedInput.x*raftSpeedMultiplier, raftMixedInput.y*raftSpeedMultiplier);
@@ -45,20 +47,6 @@ public class RaftController : MonoBehaviour
     void Start()
     {
         raftRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        
-        if (GameManager.instance.rafts[0] != this) // We only have 2 raft max in game
-            GameManager.instance.rafts[0] = this;
-        else
-            GameManager.instance.rafts[1] = this;
-        
-        
-        PreStartCheck();
-    }
-
-    private void _tmpAddNewTeam() //methods for test, to delete when players selection done
-    {
-        GameManager.instance.AddNewPlayer(0,1);
-        GameManager.instance.AddNewPlayer(1,1);
     }
 
     // Update is called once per frame
@@ -76,6 +64,10 @@ public class RaftController : MonoBehaviour
     }
     #endregion
     #region PublicMethods
-    
+
+    public int GetNbrPlayersOnRaft()
+    {
+        return playersOnRaft.Count;
+    }
     #endregion
 }

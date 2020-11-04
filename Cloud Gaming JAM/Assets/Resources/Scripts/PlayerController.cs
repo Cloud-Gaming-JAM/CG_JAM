@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
-public class PlayerController
+public class PlayerController : MonoBehaviour
 {
     public int teamId; //0 = no team, 1 = first team
     public int playerId;
@@ -12,17 +13,25 @@ public class PlayerController
     
     private Vector2 lastInputValue;
 
-    // public PlayerController(int id)
-    // {
-    //     idPlayer = id;
-    // }
-
-    public void SetPlayerID(int id)
+    private void Awake()
     {
-        playerId = id;
         player = ReInput.players.GetPlayer(playerId);
     }
 
+    private void Update()
+    {
+        CheckInputToJoin();
+    }
+
+    private void CheckInputToJoin()
+    {
+        if (teamId == 0 && player.GetButtonDown("select"))
+        {
+            player.GetButton("select");
+            LevelManager.instance.AddNewPlayer(playerId);
+        }
+    }
+    
     public void SetTeamID(int newTeam)
     {
         teamId = newTeam;
