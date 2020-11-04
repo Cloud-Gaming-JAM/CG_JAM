@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public GameState gameState;
-
-    public PlayerController[] player = new PlayerController[4];
+    
+    public RaftController[] rafts = new RaftController[2];
+    public PlayerController[] players = new PlayerController[4];
 
     private void Awake()
     {
@@ -22,9 +24,9 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    void AddNewPlayer()
+    public void AddNewPlayer(int playerId, int teamToJoin)
     {
-        
+        players[playerId].teamId = teamToJoin;
     }
 
     public int GetNbrController()

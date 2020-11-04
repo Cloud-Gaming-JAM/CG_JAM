@@ -13,7 +13,7 @@ public class EndLine : MonoBehaviour
             playersFinished.Add(player.GetComponent<PlayerController>());
         }
 
-        if (playersFinished.Count == GameManager.instance.player.Length)
+        if (playersFinished.Count == GameManager.instance.players.Length)
         {
             EndGame(/*WinnerID*/);
         }

@@ -5,7 +5,7 @@ using Rewired;
 
 public class PlayerController
 {
-    public bool isPlaying;
+    public int teamId; //0 = no team, 1 = first team
     public int playerId;
     public Player player;
     public PlayerMoveState state;
@@ -21,6 +21,11 @@ public class PlayerController
     {
         playerId = id;
         player = ReInput.players.GetPlayer(playerId);
+    }
+
+    public void SetTeamID(int newTeam)
+    {
+        teamId = newTeam;
     }
 
     public void SetPlayerState(PlayerMoveState state)

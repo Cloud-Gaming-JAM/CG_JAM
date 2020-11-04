@@ -45,11 +45,20 @@ public class RaftController : MonoBehaviour
     void Start()
     {
         raftRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        foreach(PlayerController instance in GetComponents<PlayerController>())
-        {
-            playersOnRaft.Add(instance);
-        }
+        
+        if (GameManager.instance.rafts[0] != this) // We only have 2 raft max in game
+            GameManager.instance.rafts[0] = this;
+        else
+            GameManager.instance.rafts[1] = this;
+        
+        
         PreStartCheck();
+    }
+
+    private void _tmpAddNewTeam() //methods for test, to delete when players selection done
+    {
+        GameManager.instance.AddNewPlayer(0,1);
+        GameManager.instance.AddNewPlayer(1,1);
     }
 
     // Update is called once per frame
