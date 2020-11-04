@@ -44,11 +44,12 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 GetPlayerInput()
     {
-        Vector2 dir = new Vector2(0,0);
+        Vector2 dir = Vector2.zero;
         if (state == PlayerMoveState.horizontal)
         {
             dir.x = player.GetAxis("moveHorizontal");
-            Debug.Log(dir.x);
+
+            //Debug.Log(dir.x);
             //return (new Vector2(0, GetMoveDir()));
         }
         
@@ -59,7 +60,6 @@ public class PlayerController : MonoBehaviour
         }
         return dir;
     }
-
     private float GetMoveDir() // for roll joystick control - WIP
     {
         Vector2 newValue = new Vector2();
