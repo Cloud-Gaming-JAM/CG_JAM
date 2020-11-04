@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if (state == PlayerMoveState.horizontal)
         {
             dir.x = player.GetAxis("moveHorizontal");
+            Debug.Log(dir.x);
             //return (new Vector2(0, GetMoveDir()));
         }
         
@@ -56,7 +57,6 @@ public class PlayerController : MonoBehaviour
             dir.y = player.GetAxis("moveVertical");
             //return (new Vector2(GetMoveDir(), 0));
         }
-        Debug.Log(dir);
         return dir;
     }
 

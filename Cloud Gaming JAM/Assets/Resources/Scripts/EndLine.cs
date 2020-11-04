@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class EndLine : MonoBehaviour
 {
-    List<PlayerController> playersFinished = new List<PlayerController>();
+    //List<PlayerController> playersFinished = new List<PlayerController>();
 
-    void OnTrigger2DEnter(Collider2D player)
+    void OnTrigger2DEnter(Collider2D raft)
     {
-        if (player.GetComponent<PlayerController>() != null && !playersFinished.Contains(player.GetComponent<PlayerController>()))
-        {
-            playersFinished.Add(player.GetComponent<PlayerController>());
-        }
-
-        if (playersFinished.Count == GameManager.instance.players.Length)
-        {
-            EndGame(/*WinnerID*/);
-        }
+        if (LevelManager.instance.nbrRaftOver == 0)
+            LevelManager.instance.winnerTeam = raft.GetComponent<RaftController>().teamId;
+        
+        LevelManager.instance.nbrRaftOver++;
+        
+        if(LevelManager.instance.nbrRaftInGame == LevelManager.instance.nbrRaftOver)
+            EndGame();
     }
 
     void EndGame(/*int WinnerID*/)
     {
-
+        Debug.Log("Race Finished !");
     }
 }

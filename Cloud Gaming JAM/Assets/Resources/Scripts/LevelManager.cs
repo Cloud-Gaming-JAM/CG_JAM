@@ -7,6 +7,9 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     public RaftController[] rafts = new RaftController[2];
+    [HideInInspector] public int nbrRaftInGame;
+    [HideInInspector] public int nbrRaftOver;
+    [HideInInspector] public int winnerTeam;
     private void Awake()
     {
         if (instance == null)
@@ -16,6 +19,16 @@ public class LevelManager : MonoBehaviour
     private void Init()
     {
         instance = this;
+        for (int i = 1; i < rafts.Length + 1; i++)
+        {
+            rafts[i - 1].teamId = i;
+        }
+    }
+
+    private void ResetValues()
+    {
+        nbrRaftOver = 0;
+        winnerTeam = 0;
     }
     
     public void AddNewPlayer(int playerId)
