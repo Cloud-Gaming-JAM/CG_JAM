@@ -178,7 +178,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 621
     mosaicPosition: {x: 0, y: 0}
   - name: Croco
@@ -192,7 +192,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 611
     mosaicPosition: {x: 0, y: 0}
   - name: Calque 26

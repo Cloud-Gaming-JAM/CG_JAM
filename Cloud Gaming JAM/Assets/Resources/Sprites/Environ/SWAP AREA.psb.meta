@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc427a87bf4bb914a9b8734104eb2f31
+guid: 365fe9e8530c6be498bd953f2c96b7c5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -89,7 +89,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Trunk
+  - name: FOG 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -98,9 +98,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 129
-      height: 615
-    spriteID: 8d6830cf1cb95bd4bb7ec9fbc7bb2c6e
+      width: 679
+      height: 886
+    spriteID: 800cc7d5a411d0b4bbf1b3e3dbfa3634
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -110,76 +110,47 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-  - name: Shadow
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 141
-      y: 4
-      width: 133
-      height: 595
-    spriteID: 16a3e9541aef1894898188a2692f532d
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 141, y: 4}
+    uvTransform: {x: 3, y: -57}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 512
+  importedTextureWidth: 1024
   importedTextureHeight: 1024
-  documentSize: {x: 133, y: 615}
+  documentSize: {x: 680, y: 952}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 512
+  textureActualWidth: 1024
   textureActualHeight: 1024
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: TRUNK TO BREAK
+  - name: SWAP ZONE
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 00000000000000000000000000000000
-    layerID: 677
+    spriteID: 
+    layerID: 778
     mosaicPosition: {x: 0, y: 0}
-  - name: Trunk
-    spriteName: Trunk
+  - name: FOG 1
+    spriteName: FOG 1
     isGroup: 0
     parentIndex: 0
-    spriteID: 8d6830cf1cb95bd4bb7ec9fbc7bb2c6e
-    layerID: 676
+    spriteID: 800cc7d5a411d0b4bbf1b3e3dbfa3634
+    layerID: 775
     mosaicPosition: {x: 4, y: 4}
-  - name: Shadow
-    spriteName: Shadow
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 16a3e9541aef1894898188a2692f532d
-    layerID: 675
-    mosaicPosition: {x: 141, y: 4}
   characterData:
     bones: []
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: TRUNK TO BREAK Texture
-  prefabAssetName: TRUNK TO BREAK Prefab
-  spriteLibAssetName: TRUNK TO BREAK Sprite Lib
+  textureAssetName: SWAP AREA Texture
+  prefabAssetName: SWAP AREA Prefab
+  spriteLibAssetName: SWAP AREA Sprite Lib
   secondarySpriteTextures: []

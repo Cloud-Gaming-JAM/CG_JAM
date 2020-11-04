@@ -6,12 +6,15 @@ public class RaftController : MonoBehaviour
     #region PublicVariables
     //Raft's maximum speed, values below 1 will slow down the raft
     [Range(0.2f, 5f)] public float raftSpeedMultiplier = 1f;
+    [HideInInspector] public int teamId;
     #endregion
+    
     #region PrivateVariables
     public List<PlayerController> playersOnRaft = new List<PlayerController>();
     
     Rigidbody2D raftRigidBody;
     #endregion
+    
     #region PrivateMethods
 
     //Checks if all variables a set up properly
@@ -37,10 +40,9 @@ public class RaftController : MonoBehaviour
         foreach(PlayerController instance in playersOnRaft)
         {
             raftMixedInput += instance.GetPlayerInput();
-            Debug.Log(instance.GetPlayerInput());
         }
-        raftMixedInput.Normalize();
-        raftRigidBody.velocity = new Vector2(raftMixedInput.x*raftSpeedMultiplier, raftMixedInput.y*raftSpeedMultiplier);
+        raftMixedInput *= raftSpeedMultiplier;
+        raftRigidBody.velocity = raftMixedInput;
     }
 
     // Start is called before the first frame update
