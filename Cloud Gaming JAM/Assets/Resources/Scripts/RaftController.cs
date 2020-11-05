@@ -42,7 +42,9 @@ public class RaftController : MonoBehaviour
             raftMixedInput += instance.GetPlayerInput();
         }
         raftMixedInput *= raftSpeedMultiplier;
-        raftRigidBody.velocity = raftMixedInput;
+        
+        if (raftMixedInput != Vector2.zero)
+            raftRigidBody.velocity = raftMixedInput;
     }
     
     // Start is called before the first frame update

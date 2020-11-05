@@ -14,9 +14,9 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int winnerTeam;
 
     [Header("Tweaks values")]
-    [Range(0.2f, 5f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
+    [Range(0.2f, 3f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
     public float stopZoneTimer;
-    public float speedBoost;
+    [Range(0.5f, 2.5f)] public float speedBoost = 1f;
     
     private void Awake()
     {
@@ -64,25 +64,45 @@ public class LevelManager : MonoBehaviour
     void CheckDebuggingControl()
     {
         if (GameManager.instance.gameState != GameState.inGame) return;
-        
-        Vector2 dir = GetKeyboardInput() * raftSpeedMultiplier;
-        rafts[0].raftRigidBody.velocity = dir;
+
+        for (int i = 0; i < 2; i++)
+        {
+            Vector2 dir = GetKeyboardInput(i) * raftSpeedMultiplier;
+            rafts[i].raftRigidBody.velocity = dir;
+        }
     }
     
-    Vector2 GetKeyboardInput() // For debugging
+    Vector2 GetKeyboardInput(int raftId) // For debugging
     {
         Vector2 dir = Vector2.zero;
+        if (raftId == 0)
+        {
+            if (ReInput.players.GetSystemPlayer().GetButton("right"))
+                dir.x = 1;
+            else if (ReInput.players.GetSystemPlayer().GetButton("left"))
+            {
+                dir.x = -1;
+                Debug.Log("left !");
+            }
         
-        if (Input.GetKey(KeyCode.D))
-            dir.x = 1;
-        else if (Input.GetKey(KeyCode.Q))
-            dir.x = -1;
+            if (ReInput.players.GetSystemPlayer().GetButton("up"))
+                dir.y = 1;
+            else if (ReInput.players.GetSystemPlayer().GetButton("down"))
+                dir.y = -1;
+        }
         
-        if (Input.GetKey(KeyCode.Z))
-            dir.y = 1;
-        else if (Input.GetKey(KeyCode.S))
-            dir.y = -1;
-
+        else if (raftId == 1)
+        {
+            if (ReInput.players.GetSystemPlayer().GetButton("A_right"))
+                dir.x = 1;
+            else if (ReInput.players.GetSystemPlayer().GetButton("A_left"))
+                dir.x = -1;
+        
+            if (ReInput.players.GetSystemPlayer().GetButton("A_up"))
+                dir.y = 1;
+            else if (ReInput.players.GetSystemPlayer().GetButton("A_down"))
+                dir.y = -1;
+        }
         return dir;
     }
 
