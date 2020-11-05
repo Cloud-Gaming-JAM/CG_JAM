@@ -132,11 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2492112213494656964, guid: 873d9829eff5879428b2facb47ca6c72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.77
+      value: -7.04
       objectReference: {fileID: 0}
     - target: {fileID: 2492112213494656964, guid: 873d9829eff5879428b2facb47ca6c72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 2.11
       objectReference: {fileID: 0}
     - target: {fileID: 2492112213494656964, guid: 873d9829eff5879428b2facb47ca6c72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -624,6 +624,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1645034078}
     m_Modifications:
+    - target: {fileID: 5052621799127416022, guid: 9a93e60364ea7294bbc51a52fc68bef8, type: 3}
+      propertyPath: debuggMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5052621800472848753, guid: 9a93e60364ea7294bbc51a52fc68bef8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -729,6 +733,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5025422793335675153, guid: 609e25c97c85b1142b98505f2e2884bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504849046066119998, guid: 609e25c97c85b1142b98505f2e2884bc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430045910951258802, guid: 609e25c97c85b1142b98505f2e2884bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994478797061313409, guid: 609e25c97c85b1142b98505f2e2884bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 609e25c97c85b1142b98505f2e2884bc, type: 3}
 --- !u!1001 &5968757502123576320
@@ -803,6 +823,14 @@ PrefabInstance:
       propertyPath: rafts.Array.data[1]
       value: 
       objectReference: {fileID: 124658382}
+    - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
+      propertyPath: maxNormalSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
+      propertyPath: maxBoostSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7565335949427418646, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: m_Name
       value: LevelManager

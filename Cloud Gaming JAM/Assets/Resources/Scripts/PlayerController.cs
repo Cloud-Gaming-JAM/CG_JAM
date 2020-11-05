@@ -79,16 +79,6 @@ public class PlayerController : MonoBehaviour
                 return i;
         }
         return 0;
-        //int finalJoyDir = 0;
-        // float lastDiff = Vector2.Angle(dir, joyDirVectors[0]);
-        // for (int i = 1; i < 4; i++)
-        // {
-        //     float diff = Vector2.Angle(dir, joyDirVectors[i]);
-        //     if (diff < lastDiff)
-        //         finalJoyDir = i;
-        //     lastDiff = diff;
-        // }
-        //return finalJoyDir;
     }
     
     private Vector2 GetFinalDir()
@@ -105,18 +95,6 @@ public class PlayerController : MonoBehaviour
         }
         return finalDir;
     }
-
-    
-    // private float GetMoveDir() // for roll joystick control - previous try
-    // {
-    //     Vector2 newValue = new Vector2();
-    //     newValue = player.GetAxis2D("moveHorizontal", "moveVertical");
-    //     lastInputValue = newValue;
-    //     return Vector2.Distance(lastInputValue, newValue);
-    //
-    //     //player.GetAxisDelta("moveHorizontal");
-    //     //return lastInputValue + player.GetAxis("moveHorizontal");
-    // }
 }
 
 public enum PlayerMoveState
