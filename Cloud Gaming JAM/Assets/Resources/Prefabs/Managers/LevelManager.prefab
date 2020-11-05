@@ -46,3 +46,9 @@ MonoBehaviour:
   rafts:
   - {fileID: 0}
   - {fileID: 0}
+  nbrRaftInGame: 2
+  nbrRaftOver: 0
+  winnerTeam: 0
+  raftSpeedMultiplier: 1
+  stopZoneTimer: 0
+  speedBoost: 1
