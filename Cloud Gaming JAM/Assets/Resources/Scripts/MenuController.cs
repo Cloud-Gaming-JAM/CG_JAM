@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class MenuController : MonoBehaviour
@@ -8,25 +9,26 @@ public class MenuController : MonoBehaviour
     //Second element will be shown on initialization
     public enum MenuScreen { NULL, TitleScreen, Menu, Options, CharacterSelection, Credits }
     public MenuScreen currentState = MenuScreen.TitleScreen;
-    Dictionary<MenuScreen, GameObject> menuLUT = new Dictionary<MenuScreen, GameObject>();
+    public Dictionary<MenuScreen, GameObject> menuLUT = new Dictionary<MenuScreen, GameObject>();
 
     void Start()
     {
         GatherMenuScreens();
         InitializeMenu();
     }
-    void GatherMenuScreens()
+    public void GatherMenuScreens()
     {
-        foreach (MenuScreenTag screen in GetComponents<MenuScreenTag>())
+        foreach (MenuScreenTag screen in GetComponentsInChildren<MenuScreenTag>())
         {
-            if (screen.menuScreenType != 0)
+            if (screen.menuScreenType != MenuScreen.NULL)
             {
                 menuLUT.Add(screen.menuScreenType, screen.gameObject);
+                Debug.Log(screen.menuScreenType + "has" + screen.gameObject);
             }
 
         }
     }
-    void InitializeMenu()
+    public void InitializeMenu()
     {
         //Hide all menu to make sure multiple screens dont overlap
         foreach (KeyValuePair<MenuScreen, GameObject> screen in menuLUT)
@@ -37,7 +39,7 @@ public class MenuController : MonoBehaviour
         currentState = (MenuScreen)1;
         menuLUT[(MenuScreen)1].SetActive(true);
     }
-    void ChangeMenuState(MenuScreen state)
+    public void ChangeMenuState(MenuScreen state)
     {
         foreach (KeyValuePair<MenuScreen, GameObject> screen in menuLUT)
         {
@@ -46,5 +48,21 @@ public class MenuController : MonoBehaviour
         currentState = state;
         menuLUT[state].SetActive(true);
     }
-
+    public void ChangeMenuState(int state)
+    {
+        foreach (KeyValuePair<MenuScreen, GameObject> screen in menuLUT)
+        {
+            screen.Value.SetActive(false);
+        }
+        currentState = (MenuScreen)state;
+        menuLUT[(MenuScreen)state].SetActive(true);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void LaunchGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
