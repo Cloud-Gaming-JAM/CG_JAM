@@ -14,9 +14,9 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int winnerTeam;
 
     [Header("Tweaks values")]
-    [Range(0.2f, 3f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
+    [Range(0.5f, 3f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
     public float stopZoneTimer;
-    [Range(0.5f, 2.5f)] public float speedBoost = 1f;
+    [Range(0.5f, 3f)] public float speedBoost = 1f;
     
     private void Awake()
     {
