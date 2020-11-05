@@ -16,8 +16,8 @@ public class LevelManager : MonoBehaviour
     [Header("Tweaks values")]
     [Range(0.5f, 3f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
     public float stopZoneTimer;
-    [Range(0.5f, 3f)] public float speedBoost = 1f;
-    
+    [Range(0.5f, 150f)] public float speedBoost = 1f;
+
     private void Awake()
     {
         if (instance == null)
@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
         nbrRaftOver = 0;
         winnerTeam = 0;
     }
-    
+
     public void AddNewPlayer(int playerId)
     {
         int teamToJoin = 1;
@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
             teamToJoin = 2;
         GameManager.instance.players[playerId].teamId = teamToJoin;
         Debug.Log(GameManager.instance.players[playerId].teamId);
-        AddPlayerOnRaft(playerId, teamToJoin-1);
+        AddPlayerOnRaft(playerId, teamToJoin - 1);
     }
     private void AddPlayerOnRaft(int playerId, int teamId)
     {
@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour
             rafts[i].raftRigidBody.velocity = dir;
         }
     }
-    
+
     Vector2 GetKeyboardInput(int raftId) // For debugging
     {
         Vector2 dir = Vector2.zero;
@@ -84,20 +84,20 @@ public class LevelManager : MonoBehaviour
                 dir.x = -1;
                 Debug.Log("left !");
             }
-        
+
             if (ReInput.players.GetSystemPlayer().GetButton("up"))
                 dir.y = 1;
             else if (ReInput.players.GetSystemPlayer().GetButton("down"))
                 dir.y = -1;
         }
-        
+
         else if (raftId == 1)
         {
             if (ReInput.players.GetSystemPlayer().GetButton("A_right"))
                 dir.x = 1;
             else if (ReInput.players.GetSystemPlayer().GetButton("A_left"))
                 dir.x = -1;
-        
+
             if (ReInput.players.GetSystemPlayer().GetButton("A_up"))
                 dir.y = 1;
             else if (ReInput.players.GetSystemPlayer().GetButton("A_down"))
