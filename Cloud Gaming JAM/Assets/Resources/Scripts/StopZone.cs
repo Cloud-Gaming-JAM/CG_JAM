@@ -22,14 +22,14 @@ public class StopZone : MonoBehaviour
         activationTime = LevelManager.instance.stopZoneTimer;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
         isInZone = true;
         time = 0;
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
