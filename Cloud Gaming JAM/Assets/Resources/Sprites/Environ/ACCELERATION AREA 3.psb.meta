@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36fd1ee1ab78cbb429fa3df023d5b862
+guid: 2deec4ce19e341544aaea473d4135a7d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -96,11 +96,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 288
-      y: 4
-      width: 110
-      height: 359
-    spriteID: 2f74e6c28273413498a8e92a6e9a5467
+      x: 4
+      y: 305
+      width: 125
+      height: 358
+    spriteID: 36136a8c6b78fde42948b839877d9816
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -110,7 +110,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 68, y: -13}
+    uvTransform: {x: -190, y: 301}
   - name: Speed effect
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -118,11 +118,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 243
       y: 4
-      width: 276
-      height: 282
-    spriteID: e7a4739753deb5b48802d862b737a7e6
+      width: 256
+      height: 210
+    spriteID: 97d40c879b00c7346b7c167389014cec
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -132,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: -32}
+    uvTransform: {x: 240, y: -78}
   - name: Shadow
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -141,10 +141,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 294
-      width: 186
-      height: 360
-    spriteID: 5df93823adf75454e8a0478b32d06516
+      y: 4
+      width: 231
+      height: 293
+    spriteID: 50f888a144ed8cf4e9d24054d591a217
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -154,7 +154,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -243, y: 278}
+    uvTransform: {x: -206, y: -28}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -162,7 +162,7 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 512
   importedTextureHeight: 1024
-  documentSize: {x: 444, y: 394}
+  documentSize: {x: 444, y: 362}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
@@ -185,30 +185,30 @@ ScriptedImporter:
     spriteName: Fog
     isGroup: 0
     parentIndex: 0
-    spriteID: 2f74e6c28273413498a8e92a6e9a5467
+    spriteID: 36136a8c6b78fde42948b839877d9816
     layerID: 746
-    mosaicPosition: {x: 288, y: 4}
+    mosaicPosition: {x: 4, y: 305}
   - name: Speed effect
     spriteName: Speed effect
     isGroup: 0
     parentIndex: 0
-    spriteID: e7a4739753deb5b48802d862b737a7e6
+    spriteID: 97d40c879b00c7346b7c167389014cec
     layerID: 745
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 243, y: 4}
   - name: Shadow
     spriteName: Shadow
     isGroup: 0
     parentIndex: 0
-    spriteID: 5df93823adf75454e8a0478b32d06516
+    spriteID: 50f888a144ed8cf4e9d24054d591a217
     layerID: 744
-    mosaicPosition: {x: 4, y: 294}
+    mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: ACCELERATION  AREA 2 Texture
-  prefabAssetName: ACCELERATION  AREA 2 Prefab
-  spriteLibAssetName: ACCELERATION  AREA 2 Sprite Lib
+  textureAssetName: ACCELERATION AREA 3 Texture
+  prefabAssetName: ACCELERATION AREA 3 Prefab
+  spriteLibAssetName: ACCELERATION AREA 3 Sprite Lib
   secondarySpriteTextures: []
