@@ -13,10 +13,11 @@ public class SpeedBoost : MonoBehaviour
         speedBoost = LevelManager.instance.speedBoost;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
         other.attachedRigidbody.AddForce(new Vector3(speedBoost, 0));
+        Debug.Log("SPEEDBOOST");
     }
 }

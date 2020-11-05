@@ -484,24 +484,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displacementLength: 1
-  displacementDuration: 0.94
+  displacementDuration: 1.5
   travelLUT:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 0.34254336
+      outSlope: 0.34254336
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.33064196
+    - serializedVersion: 3
+      time: 0.49970338
+      value: 0.5001075
+      inSlope: 2.3591218
+      outSlope: -0.00046847144
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.070210755
+      outWeight: 0.4333884
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 0.99919224
+      outSlope: 0.99919224
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
