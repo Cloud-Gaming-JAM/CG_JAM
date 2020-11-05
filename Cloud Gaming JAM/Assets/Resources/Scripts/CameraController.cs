@@ -5,9 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [Range(1f, 10f)] public float displacementLength = 1f;
-    [Range(0.01f, 1.5f)] public float displacementDuration = 1f;
+    [Range(1.5f, 10f)] public float displacementDuration = 1f;
     public AnimationCurve travelLUT;
     Collider2D travelTrigger;
+    bool travelOnce = false;
 
     void Start()
     {
@@ -17,12 +18,17 @@ public class CameraController : MonoBehaviour
 
     void Travel()
     {
-        travelTrigger.enabled = false;
-        float starttime = Time.time;
-        float endtime = Time.time + displacementDuration;
-        Vector3 startPosition = transform.position;
-        Vector3 endPosition = startPosition + new Vector3(displacementLength, 0f, 0f);
-        StartCoroutine(TravelRoutine(startPosition, endPosition, endtime));
+        if (!travelOnce)
+        {
+            travelOnce = true;
+            travelTrigger.enabled = false;
+            float starttime = Time.time;
+            float endtime = Time.time + displacementDuration;
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = startPosition + new Vector3(displacementLength, 0f, 0f);
+            StartCoroutine(TravelRoutine(startPosition, endPosition, endtime));
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D raft)
@@ -35,8 +41,11 @@ public class CameraController : MonoBehaviour
         while (Time.time != endtime)
         {
             transform.position = Vector3.Lerp(startPos, endPos, travelLUT.Evaluate(Time.time / endtime));
+            yield return new WaitForEndOfFrame();
         }
         travelTrigger.enabled = true;
+        travelOnce = false;
         yield return null;
+
     }
 }
