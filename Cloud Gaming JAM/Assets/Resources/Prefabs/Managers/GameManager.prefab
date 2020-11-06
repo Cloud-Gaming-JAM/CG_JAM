@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamId: 0
-  playerId: 3
+  playerId: 0
+  controllerId: 3
   state: 1
   lastJoyDir: 0
   currentJoyDir: 0
@@ -53,7 +54,6 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  debuggMode: 0
 --- !u!1 &5052621799080541662
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamId: 0
-  playerId: 1
+  playerId: 0
+  controllerId: 1
   state: 1
   lastJoyDir: 0
   currentJoyDir: 0
@@ -107,7 +108,6 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  debuggMode: 0
 --- !u!1 &5052621799127416020
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamId: 0
   playerId: 0
+  controllerId: 0
   state: 0
   lastJoyDir: 0
   currentJoyDir: 0
@@ -161,7 +162,6 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  debuggMode: 1
 --- !u!1 &5052621799256603424
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamId: 0
-  playerId: 2
+  playerId: 0
+  controllerId: 2
   state: 0
   lastJoyDir: 0
   currentJoyDir: 0
@@ -215,7 +216,6 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  debuggMode: 0
 --- !u!1 &5052621800472848758
 GameObject:
   m_ObjectHideFlags: 0

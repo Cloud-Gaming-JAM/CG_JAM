@@ -62,6 +62,23 @@ public class RaftController : MonoBehaviour
     {
         if (GameManager.instance.gameState == GameState.inGame)
             CheckAndApplyPlayersForce();
+        UpdateSpeedAnimParam();
+    }
+
+    void UpdateSpeedAnimParam()
+    {
+        
+        foreach (PlayerController player in playersOnRaft)
+        {
+            int i = 0;
+            if (player.playerId == 2 || player.playerId == 4)
+                i = 1;
+            
+            if (player.state == PlayerMoveState.horizontal)
+                characterPrefab[i].GetComponent<Animator>().SetFloat("Speed", (raftRigidBody.velocity.x / LevelManager.instance.maxBoostSpeed.x) * 10);
+            else if (player.state == PlayerMoveState.vertical)
+                characterPrefab[i].GetComponent<Animator>().SetFloat("Speed", (raftRigidBody.velocity.y / LevelManager.instance.maxBoostSpeed.y) * 10);
+        }
     }
 
     void CheckAndApplyPlayersForce()

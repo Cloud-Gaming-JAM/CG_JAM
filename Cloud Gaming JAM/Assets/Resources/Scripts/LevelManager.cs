@@ -99,7 +99,6 @@ public class LevelManager : MonoBehaviour
         if (rafts[raftIndex].playersOnRaft.Count < 2)
             rafts[raftIndex].playersOnRaft.Add(GameManager.instance.players[controllerId]);
     }
-    
     #endregion
     
 
