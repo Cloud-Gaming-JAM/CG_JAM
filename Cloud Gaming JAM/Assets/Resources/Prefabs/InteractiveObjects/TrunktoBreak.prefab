@@ -128,6 +128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed area
       objectReference: {fileID: 0}
+    - target: {fileID: 5097741633688429511, guid: 97dfefa1b27976b40b70ae2d978ad8c4, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5097741633868843589, guid: 97dfefa1b27976b40b70ae2d978ad8c4, type: 3}
       propertyPath: m_IsActive
       value: 0
