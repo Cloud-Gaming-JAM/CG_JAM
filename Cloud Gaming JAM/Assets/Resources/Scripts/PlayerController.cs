@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HasToJoinOrQuit();
+        if(playerId == 1 && player.GetButtonDown("start"))
+            Debug.Log("START !!!");
     }
 
     private void HasToJoinOrQuit()
@@ -39,7 +41,8 @@ public class PlayerController : MonoBehaviour
         else if (teamId > 0 && player.GetButtonDown("back"))
             LevelManager.instance.RemovePlayer(this);
     }
-    public Vector2 GetPlayerInput()
+    
+    public Vector2 GetMovePlayerInput()
     {
         Vector2 dir = Vector2.zero;
         if (state == PlayerMoveState.horizontal)

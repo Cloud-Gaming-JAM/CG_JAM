@@ -79,7 +79,6 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Player " + newPlayer.controllerId + " join team : " +  newPlayer.teamId);
         newPlayer.playerId = nbrPlayersJoined;
         AddPlayerOnRaft(newPlayer.controllerId, teamToJoin - 1);
-        //FindObjectOfType<MenuController>().GetComponent<MenuController>().SetActiveJoinPlayerImage(true, nbrPlayersJoined);
     }
 
     public void RemovePlayer(PlayerController playerToRemove)
@@ -89,7 +88,6 @@ public class LevelManager : MonoBehaviour
         MenuController.instance.SetActiveLeavePlayerImage(playerToRemove.playerId);
         Debug.Log("Player " + playerToRemove.controllerId + " leave team : " +  playerToRemove.teamId);
         playerToRemove.teamId = 0;
-        //FindObjectOfType<MenuController>().GetComponent<MenuController>().SetActiveJoinPlayerImage(false, playerToRemove.playerId);
         playerToRemove.playerId = 0;
         nbrPlayersJoined--;
     }

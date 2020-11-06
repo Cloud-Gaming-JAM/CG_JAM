@@ -117,7 +117,7 @@ public class RaftController : MonoBehaviour
         Vector2 raftMixedInput = new Vector2(0f, 0f);
         foreach (PlayerController instance in playersOnRaft)
         {
-            raftMixedInput += instance.GetPlayerInput();
+            raftMixedInput += instance.GetMovePlayerInput();
         }
         return raftMixedInput;
     }
