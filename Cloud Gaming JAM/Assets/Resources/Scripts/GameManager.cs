@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     //public RaftController[] rafts = new RaftController[2];
     public PlayerController[] players = new PlayerController[4];
     
-    [Header("Characters")]
-    public GameObject[] characters;
-    [HideInInspector] public List<int> charactersAvailable;
+    //[Header("Characters")]
+    //public GameObject[] characters;
+    //[HideInInspector] public List<int> charactersAvailable;
 
     private void Awake()
     {
@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
     void Init()
     {
         instance = this;
-        for (int i = 0; i < characters.Length - 1; i++)
-        {
-            charactersAvailable.Add(i);
-        }
+        // for (int i = 0; i < characters.Length - 1; i++)
+        // {
+        //     charactersAvailable.Add(i);
+        // }
     }
 
     public int GetNbrController()

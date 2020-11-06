@@ -13,8 +13,9 @@ public class SwitchPlayers : MonoBehaviour
         if (!other.CompareTag("Player") || nbrRaftEntered >= 2) return;
 
         RaftController raftController = other.GetComponent<RaftController>();
-        if (raftController.teamId == raftEntered[0] || raftController.teamId == raftEntered[1]) return;
-        
+        if (raftController.teamId == 0 || raftController.teamId == raftEntered[0] || raftController.teamId == raftEntered[1]) return;
+        Debug.Log("collide with fog");
+
         raftEntered[nbrRaftEntered] = raftController.teamId;
         nbrRaftEntered++;
         raftController.SwitchPlayers();

@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public bool debugControlMode;
 
     public RaftController[] rafts = new RaftController[2];
-    public int nbrRaftInGame;
+    public int nbrRaftInGame = 2;
     [HideInInspector] public int nbrRaftOver;
     [HideInInspector] public int winnerTeam;
     
@@ -22,15 +22,12 @@ public class LevelManager : MonoBehaviour
     [Range(0.97f, 1f)] public float friction;
     [Range(5f, 20f)] public float rawFlowForce;
     
-    
     [Header("Objects values")]
     public float stopZoneTimer;
     [Range(50f, 200f)] public int speedBoost = 50;
     [Range(1.1f, 2.5f)] public float slowCoef = 1.5f;
     [Range(50f, 200f)] public float BumpForce = 100f;
     
-    
-
     private void Awake()
     {
         if (instance == null)
@@ -40,10 +37,10 @@ public class LevelManager : MonoBehaviour
     private void Init()
     {
         instance = this;
-        for (int i = 1; i < rafts.Length + 1; i++)
-        {
-            rafts[i - 1].teamId = i;
-        }
+        // for (int i = 1; i < rafts.Length + 1; i++)
+        // {
+        //     rafts[i - 1].teamId = i;
+        // }
     }
 
     private void Update()
@@ -57,6 +54,8 @@ public class LevelManager : MonoBehaviour
         winnerTeam = 0;
     }
 
+    #region GamePreparation
+
     public void AddNewPlayer(int playerId)
     {
         int teamToJoin = 1;
@@ -65,6 +64,7 @@ public class LevelManager : MonoBehaviour
         GameManager.instance.players[playerId].teamId = teamToJoin;
         Debug.Log("Player " + playerId + " join team : " +  GameManager.instance.players[playerId].teamId);
         AddPlayerOnRaft(playerId, teamToJoin - 1);
+        GameObject.FindObjectOfType<MenuController>().GetComponent<MenuController>().SetActiveJoinPlayerImage(true, playerId);
     }
 
     public void RemovePlayer(PlayerController playerToRemove)
@@ -73,6 +73,7 @@ public class LevelManager : MonoBehaviour
         rafts[raftIndex].playersOnRaft.Remove(playerToRemove);
         Debug.Log("Player " + playerToRemove.playerId + " leave team : " +  playerToRemove.teamId);
         playerToRemove.teamId = 0;
+        GameObject.FindObjectOfType<MenuController>().GetComponent<MenuController>().SetActiveJoinPlayerImage(false, playerToRemove.playerId);
     }
     
     private void AddPlayerOnRaft(int playerId, int raftIndex)
@@ -80,6 +81,9 @@ public class LevelManager : MonoBehaviour
         if (rafts[raftIndex].playersOnRaft.Count < 2)
             rafts[raftIndex].playersOnRaft.Add(GameManager.instance.players[playerId]);
     }
+    
+    #endregion
+    
 
     #region debugControls
 
