@@ -28,21 +28,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        CheckInputToJoin();
+        HasToJoinOrQuit();
     }
 
-    private void CheckInputToJoin()
+    private void HasToJoinOrQuit()
     {
         if (teamId == 0 && player.GetButtonDown("select"))
-        {
-            player.GetButton("select");
             LevelManager.instance.AddNewPlayer(playerId);
-        }
-    }
-    
-    public void SetTeamID(int newTeam)
-    {
-        teamId = newTeam;
+        
+        else if (teamId > 0 && player.GetButtonDown("back"))
+            LevelManager.instance.RemovePlayer(this);
     }
 
     public void SetPlayerState(PlayerMoveState state)

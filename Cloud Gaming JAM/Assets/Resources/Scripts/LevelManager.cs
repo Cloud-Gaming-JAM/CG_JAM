@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     public int nbrRaftInGame;
     [HideInInspector] public int nbrRaftOver;
     [HideInInspector] public int winnerTeam;
-
+    
     [Header("Raft values")]
     [Range(0.5f, 3f)] public float raftSpeedCoef = 1f; 
     [Range(3f, 10f)] public float raftHorizontalSpeedCoef = 1f; 
@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
     [Header("Objects values")]
     public float stopZoneTimer;
     [Range(50f, 200f)] public int speedBoost = 50;
+    [Range(1.1f, 2.5f)] public float slowCoef = 1.5f;
+    
 
     private void Awake()
     {
@@ -44,7 +46,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        //CheckDebuggingControl();
+        //CheckDebuggingControl();  //doesn't work since the new controls/move Loop
     }
 
     private void ResetValues()
@@ -59,16 +61,22 @@ public class LevelManager : MonoBehaviour
         if (rafts[0].GetNbrPlayersOnRaft() == 2)
             teamToJoin = 2;
         GameManager.instance.players[playerId].teamId = teamToJoin;
-        Debug.Log(GameManager.instance.players[playerId].teamId);
+        Debug.Log("Player " + playerId + " join team : " +  GameManager.instance.players[playerId].teamId);
         AddPlayerOnRaft(playerId, teamToJoin - 1);
+    }
+
+    public void RemovePlayer(PlayerController playerToRemove)
+    {
+        int raftIndex = playerToRemove.teamId - 1;
+        rafts[raftIndex].playersOnRaft.Remove(playerToRemove);
+        Debug.Log("Player " + playerToRemove.playerId + " leave team : " +  playerToRemove.teamId);
+        playerToRemove.teamId = 0;
     }
     
     private void AddPlayerOnRaft(int playerId, int raftIndex)
     {
         if (rafts[raftIndex].playersOnRaft.Count < 2)
             rafts[raftIndex].playersOnRaft.Add(GameManager.instance.players[playerId]);
-        
-        
     }
 
     #region debugControls

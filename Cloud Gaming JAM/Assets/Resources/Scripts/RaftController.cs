@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class RaftController : MonoBehaviour
 {
-    #region PublicVariables
     public Rigidbody2D raftRigidBody;
     public float raftSpeedMultiplier = 1f;
     
     public List<PlayerController> playersOnRaft = new List<PlayerController>();
     [HideInInspector] public int teamId;
-    #endregion
+
+    [SerializeField] private Transform[] characterTransform = new Transform[2];
+    public GameObject[] characterPrefab = new GameObject[2];
     
-    #region PrivateVariables
     private Vector2 finalRaftForce;
 
     private float friction;
     private float rawFlowForce;
-    #endregion
     
-    #region PrivateMethods
+    #region OnStartCalls
     
     void Start()
     {
@@ -34,7 +33,6 @@ public class RaftController : MonoBehaviour
         rawFlowForce = LevelManager.instance.rawFlowForce;
     }
     
-    //Checks if all variables a set up properly
     void PreStartCheck()
     {
         if(playersOnRaft.Count == 0)
@@ -42,10 +40,40 @@ public class RaftController : MonoBehaviour
             Debug.LogError("Raft has no players on board");
         }
     }
+    #endregion
 
+    #region PublicMethods
+
+    public int GetNbrPlayersOnRaft()
+    {
+        return playersOnRaft.Count;
+    }
+    
     public void UpdateRaftForce(Vector2 forceToAdd)
     {
         finalRaftForce += forceToAdd;
+    }
+    #endregion
+
+    #region UpdateCalls
+    void Update()
+    {
+        CheckAndApplyPlayersForce();
+    }
+    
+    void CheckAndApplyPlayersForce()
+    {
+        Vector2 playersInput = GetRaftPlayersInput();   
+        if (playersInput == Vector2.zero) return;
+        
+        if(playersInput.x != 0)
+            playersInput.x *= LevelManager.instance.raftHorizontalSpeedCoef;
+        
+        Debug.Log("UpdateRaftForce");
+        UpdateRaftForce(playersInput);
+        finalRaftForce *= raftSpeedMultiplier;
+        
+        //ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
     }
     
     Vector2 GetRaftPlayersInput()
@@ -72,35 +100,23 @@ public class RaftController : MonoBehaviour
         else if (newVelocity.y < -maxSpeed.y)
             finalRaftForce.y = -maxSpeed.y + raftRigidBody.velocity.y;
     }
-    
-    // Update is called once per frame
-    void Update()
+    #endregion
+
+    #region Bump
+
+    public void BumpWithObstacle()
     {
-        CheckAndApplyPlayersForce();
+        
     }
 
-    void CheckAndApplyPlayersForce()
-    {
-        Vector2 playersInput = GetRaftPlayersInput();   
-        if (playersInput == Vector2.zero) return;
-        
-        if(playersInput.x != 0)
-            playersInput.x *= LevelManager.instance.raftHorizontalSpeedCoef;
-        
-        Debug.Log("UpdateRaftForce");
-        UpdateRaftForce(playersInput);
-        finalRaftForce *= raftSpeedMultiplier;
-        
-        //ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
-    }
-    
-    private void ApplyFrictionAndFlowForce()
-    {
-        raftRigidBody.velocity *= friction;
-        if(raftRigidBody.velocity.x > -(LevelManager.instance.maxNormalSpeed.x / 2))
-            raftRigidBody.AddForce(Vector2.left / rawFlowForce);
+    #endregion
 
-        //if (!Mathf.Approximately(0f, raftRigidBody.velocity.x))
+    #region FixedUpdateCalls
+
+    void FixedUpdate()
+    {
+        ApplyNewSpeed();
+        ApplyFrictionAndFlowForce();
     }
     
     private void ApplyNewSpeed()
@@ -113,26 +129,31 @@ public class RaftController : MonoBehaviour
             finalRaftForce = Vector2.zero;
         }
     }
-
-    void FixedUpdate()
-    {
-        ApplyNewSpeed();
-        ApplyFrictionAndFlowForce();
-    }
     
+    private void ApplyFrictionAndFlowForce()
+    {
+        raftRigidBody.velocity *= friction;
+        if(raftRigidBody.velocity.x > -(LevelManager.instance.maxNormalSpeed.x / 2))
+            raftRigidBody.AddForce(Vector2.left / rawFlowForce);
+    }
     #endregion
-    #region PublicMethods
 
-    public int GetNbrPlayersOnRaft()
+    #region SwitchPlayers
+
+    public void SwitchPlayers()
     {
-        return playersOnRaft.Count;
+        Debug.Log("Enter in the fog !");
+        foreach (var playerController in playersOnRaft)
+        {
+            if (playerController.state == PlayerMoveState.horizontal)
+                playerController.state = PlayerMoveState.vertical;
+            else if (playerController.state == PlayerMoveState.vertical)
+                playerController.state = PlayerMoveState.horizontal;
+        }
+        characterPrefab[0].transform.SetParent(characterTransform[0].transform, false);
+        characterPrefab[1].transform.SetParent(characterTransform[1].transform, false);
     }
-    
-    public void SwitchPlayerStates()
-    {
-        
-    }
-    
+
     #endregion
 }
 
