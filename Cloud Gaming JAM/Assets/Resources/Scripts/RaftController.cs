@@ -9,12 +9,14 @@ public class RaftController : MonoBehaviour
 
     public List<PlayerController> playersOnRaft = new List<PlayerController>();
     public int teamId;
+    public float oarSoundIntermitence = 2f;
 
     [SerializeField] private Transform[] characterTransform = new Transform[2];
     public GameObject[] characterPrefab = new GameObject[2];
 
     private Vector2 finalRaftForce;
-
+    private float timeSinceOarSound;
+    private bool oarSound = true;
     private float friction;
     private float rawFlowForce;
 
@@ -58,7 +60,7 @@ public class RaftController : MonoBehaviour
     #region UpdateCalls
     void Update()
     {
-        if(GameManager.instance.gameState == GameState.inGame)
+        if (GameManager.instance.gameState == GameState.inGame)
             CheckAndApplyPlayersForce();
     }
 
@@ -73,6 +75,22 @@ public class RaftController : MonoBehaviour
         Debug.Log("UpdateRaftForce");
         UpdateRaftForce(playersInput);
         finalRaftForce *= raftSpeedMultiplier;
+
+        if (timeSinceOarSound >= oarSoundIntermitence)
+        {
+            oarSound = true;
+        }
+        if (oarSound)
+        {
+            AudioManager.instance.Play("oar" + (int)UnityEngine.Random.Range(1, 3));
+            oarSound = false;
+            oarSoundIntermitence = 0f;
+        }
+        else
+        {
+            timeSinceOarSound += Time.deltaTime;
+        }
+
 
         ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
     }
@@ -118,6 +136,7 @@ public class RaftController : MonoBehaviour
     {
         Vector2 dir = other.relativeVelocity.normalized;
         raftRigidBody.AddForce(dir * LevelManager.instance.BumpForce);
+        AudioManager.instance.Play("grunt" + (int)UnityEngine.Random.Range(1, 5));
     }
 
     #endregion

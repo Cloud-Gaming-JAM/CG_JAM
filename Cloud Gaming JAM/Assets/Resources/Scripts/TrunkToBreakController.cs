@@ -17,7 +17,9 @@ public class TrunkToBreakController : MonoBehaviour
         }
         if (trunkHealth == 0)
         {
+            AudioManager.instance.Play("TrunkBreak");
             normalTrunk.SetActive(false);
+            //trunk animation
             brokenTrunk.SetActive(true);
         }
     }
