@@ -43,12 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbeb5b4a16996db4186a20e3e1ac5322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicPrefab: {fileID: 0}
   sounds:
   - clipName: 
     clip: {fileID: 8300000, guid: e5a4c0467893e9045ad40b95f4a21d68, type: 3}
     source: {fileID: 0}
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     playOnAwake: 1
     loop: 1
@@ -62,14 +61,14 @@ MonoBehaviour:
   - clipName: MenuSelect
     clip: {fileID: 8300000, guid: a6390dc020e14ec41a703a9a347d2a02, type: 3}
     source: {fileID: 0}
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     playOnAwake: 0
     loop: 0
   - clipName: MenuBack
     clip: {fileID: 8300000, guid: 56c37ed8ab538624f8b745970a2fe06f, type: 3}
     source: {fileID: 0}
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     playOnAwake: 0
     loop: 0
