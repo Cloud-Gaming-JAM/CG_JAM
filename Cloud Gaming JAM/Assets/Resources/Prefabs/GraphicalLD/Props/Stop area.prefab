@@ -103,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 9972b6f643a09a748b84eeb40e3807d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8213482324073283384}
   - component: {fileID: 8213482324073283391}
+  - component: {fileID: 1892211029485757100}
   m_Layer: 0
   m_Name: BEAVERS
   m_TagString: Untagged
@@ -177,6 +178,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3199043, y: 8.672138}
   m_EdgeRadius: 0
+--- !u!210 &1892211029485757100
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213482324073283385}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 15
 --- !u!1 &8213482325499241488
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +261,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f5e137ad4ce7fd94d942cf9c0549c7ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

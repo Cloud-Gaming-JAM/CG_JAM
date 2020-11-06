@@ -494,7 +494,6 @@ GameObject:
   m_Component:
   - component: {fileID: 185071074782144772}
   - component: {fileID: 1326393467454166133}
-  - component: {fileID: 1549034677768262822}
   - component: {fileID: 678540001}
   m_Layer: 0
   m_Name: CameraRig
@@ -533,59 +532,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displacementLength: 1
-  displacementDuration: 4
+  displacementDuration: 2
   travelLUT:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.011320755
-      outSlope: 0.011320755
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0.8290688
-    - serializedVersion: 3
-      time: 0.75385785
-      value: 0.254832
-      inSlope: 0.6142459
-      outSlope: 1.4071945
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.31186244
-      outWeight: 0.4333884
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 3.0273888
-      outSlope: 3.0273888
-      tangentMode: 34
+      inSlope: 2.8532214
+      outSlope: 2.8532214
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
+      inWeight: 0.18133974
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1818360608 &1549034677768262822
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2784705035481437523}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 0
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 0
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 185071074782144772}
-    weight: 1
 --- !u!61 &678540001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -623,7 +594,6 @@ GameObject:
   - component: {fileID: 963209203763286049}
   - component: {fileID: 1645263941159314436}
   - component: {fileID: 1990989257919218403}
-  - component: {fileID: 5571770310803097719}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -697,66 +667,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3448483084138015474}
   m_Enabled: 1
---- !u!114 &5571770310803097719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3448483084138015474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 963209203763286049}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 0}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &5924689953447107352
 GameObject:
   m_ObjectHideFlags: 0
