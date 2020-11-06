@@ -6,20 +6,20 @@ public class RaftController : MonoBehaviour
 {
     public Rigidbody2D raftRigidBody;
     public float raftSpeedMultiplier = 1f;
-    
+
     public List<PlayerController> playersOnRaft = new List<PlayerController>();
     [HideInInspector] public int teamId;
 
     [SerializeField] private Transform[] characterTransform = new Transform[2];
     public GameObject[] characterPrefab = new GameObject[2];
-    
+
     private Vector2 finalRaftForce;
 
     private float friction;
     private float rawFlowForce;
-    
+
     #region OnStartCalls
-    
+
     void Start()
     {
         raftRigidBody = gameObject.GetComponent<Rigidbody2D>();
@@ -32,10 +32,10 @@ public class RaftController : MonoBehaviour
         friction = LevelManager.instance.friction;
         rawFlowForce = LevelManager.instance.rawFlowForce;
     }
-    
+
     void PreStartCheck()
     {
-        if(playersOnRaft.Count == 0)
+        if (playersOnRaft.Count == 0)
         {
             Debug.LogError("Raft has no players on board");
         }
@@ -48,7 +48,7 @@ public class RaftController : MonoBehaviour
     {
         return playersOnRaft.Count;
     }
-    
+
     public void UpdateRaftForce(Vector2 forceToAdd)
     {
         finalRaftForce += forceToAdd;
@@ -60,32 +60,32 @@ public class RaftController : MonoBehaviour
     {
         CheckAndApplyPlayersForce();
     }
-    
+
     void CheckAndApplyPlayersForce()
     {
-        Vector2 playersInput = GetRaftPlayersInput();   
+        Vector2 playersInput = GetRaftPlayersInput();
         if (playersInput == Vector2.zero) return;
-        
-        if(playersInput.x != 0)
+
+        if (playersInput.x != 0)
             playersInput.x *= LevelManager.instance.raftHorizontalSpeedCoef;
-        
+
         Debug.Log("UpdateRaftForce");
         UpdateRaftForce(playersInput);
         finalRaftForce *= raftSpeedMultiplier;
-        
+
         //ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
     }
-    
+
     Vector2 GetRaftPlayersInput()
     {
-        Vector2 raftMixedInput = new Vector2(0f,0f);
-        foreach(PlayerController instance in playersOnRaft)
+        Vector2 raftMixedInput = new Vector2(0f, 0f);
+        foreach (PlayerController instance in playersOnRaft)
         {
             raftMixedInput += instance.GetPlayerInput();
         }
         return raftMixedInput;
     }
-    
+
     void ClampRaftSpeed(Vector2 maxSpeed)
     {
         Vector2 newVelocity = new Vector2(raftRigidBody.velocity.x + finalRaftForce.x, raftRigidBody.velocity.y + finalRaftForce.y);
@@ -94,7 +94,7 @@ public class RaftController : MonoBehaviour
             finalRaftForce.x = maxSpeed.x - raftRigidBody.velocity.x;
         else if (newVelocity.x < -maxSpeed.x)
             finalRaftForce.x = -maxSpeed.x + raftRigidBody.velocity.x;
-        
+
         if (newVelocity.y > maxSpeed.y)
             finalRaftForce.y = maxSpeed.y - raftRigidBody.velocity.y;
         else if (newVelocity.y < -maxSpeed.y)
@@ -104,16 +104,19 @@ public class RaftController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.CompareTag("Bumper"));
+        if (other.collider.CompareTag("Bumper"))
+        {
             BumpWithObstacle(other);
+        }
+
     }
 
     #region Bump
 
     public void BumpWithObstacle(Collision2D other)
     {
-        Vector2 dir = raftRigidBody.velocity.normalized;
-        raftRigidBody.AddForce(-dir * LevelManager.instance.BumpForce); //raw version, it works when u collide ahead but some case a fucked up
+        Vector2 dir = other.relativeVelocity.normalized;
+        raftRigidBody.AddForce(dir * LevelManager.instance.BumpForce);
     }
 
     #endregion
@@ -125,7 +128,7 @@ public class RaftController : MonoBehaviour
         ApplyNewSpeed();
         ApplyFrictionAndFlowForce();
     }
-    
+
     private void ApplyNewSpeed()
     {
         //Debug.Log("Before : " + finalRaftForce);
@@ -136,11 +139,11 @@ public class RaftController : MonoBehaviour
             finalRaftForce = Vector2.zero;
         }
     }
-    
+
     private void ApplyFrictionAndFlowForce()
     {
         raftRigidBody.velocity *= friction;
-        if(raftRigidBody.velocity.x > -(LevelManager.instance.maxNormalSpeed.x / 2))
+        if (raftRigidBody.velocity.x > -(LevelManager.instance.maxNormalSpeed.x / 2))
             raftRigidBody.AddForce(Vector2.left / rawFlowForce);
     }
     #endregion
