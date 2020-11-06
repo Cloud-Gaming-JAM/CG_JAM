@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    private float speedBoost;
+    private int speedBoost;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class SpeedBoost : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        other.attachedRigidbody.AddForce(new Vector3(speedBoost, 0));
-        Debug.Log("SPEEDBOOST");
+        other.GetComponent<RaftController>().UpdateRaftForce(Vector2.right * speedBoost);
+        Debug.Log("SPEEDBOOST : " + other.name);
     }
 }

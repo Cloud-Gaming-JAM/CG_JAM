@@ -41,10 +41,11 @@ public class CameraController : MonoBehaviour
         while (Time.time != endtime)
         {
             transform.position = Vector3.Lerp(startPos, endPos, travelLUT.Evaluate(Time.time / endtime));
+            travelTrigger.enabled = true;
+            travelOnce = false;
             yield return new WaitForEndOfFrame();
         }
-        travelTrigger.enabled = true;
-        travelOnce = false;
+
         yield return null;
 
     }

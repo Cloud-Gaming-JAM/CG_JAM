@@ -28,21 +28,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        CheckInputToJoin();
+        HasToJoinOrQuit();
     }
 
-    private void CheckInputToJoin()
+    private void HasToJoinOrQuit()
     {
         if (teamId == 0 && player.GetButtonDown("select"))
-        {
-            player.GetButton("select");
             LevelManager.instance.AddNewPlayer(playerId);
-        }
-    }
-    
-    public void SetTeamID(int newTeam)
-    {
-        teamId = newTeam;
+        
+        else if (teamId > 0 && player.GetButtonDown("back"))
+            LevelManager.instance.RemovePlayer(this);
     }
 
     public void SetPlayerState(PlayerMoveState state)
@@ -60,7 +55,7 @@ public class PlayerController : MonoBehaviour
             
             currentJoyDir = (JoyDir)GetJoyDir(dirBrut);
             dir = GetFinalDir();
-            Debug.Log("FinalDir " + dir);
+            //Debug.Log("FinalDir " + dir);
             lastJoyDir = currentJoyDir;
         }
         
@@ -79,16 +74,6 @@ public class PlayerController : MonoBehaviour
                 return i;
         }
         return 0;
-        //int finalJoyDir = 0;
-        // float lastDiff = Vector2.Angle(dir, joyDirVectors[0]);
-        // for (int i = 1; i < 4; i++)
-        // {
-        //     float diff = Vector2.Angle(dir, joyDirVectors[i]);
-        //     if (diff < lastDiff)
-        //         finalJoyDir = i;
-        //     lastDiff = diff;
-        // }
-        //return finalJoyDir;
     }
     
     private Vector2 GetFinalDir()
@@ -105,18 +90,6 @@ public class PlayerController : MonoBehaviour
         }
         return finalDir;
     }
-
-    
-    // private float GetMoveDir() // for roll joystick control - previous try
-    // {
-    //     Vector2 newValue = new Vector2();
-    //     newValue = player.GetAxis2D("moveHorizontal", "moveVertical");
-    //     lastInputValue = newValue;
-    //     return Vector2.Distance(lastInputValue, newValue);
-    //
-    //     //player.GetAxisDelta("moveHorizontal");
-    //     //return lastInputValue + player.GetAxis("moveHorizontal");
-    // }
 }
 
 public enum PlayerMoveState
