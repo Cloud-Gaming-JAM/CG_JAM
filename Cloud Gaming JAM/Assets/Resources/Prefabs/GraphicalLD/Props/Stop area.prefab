@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 8213482325499241494}
   - component: {fileID: 8213482325499241495}
   - component: {fileID: 8213482325499241493}
+  - component: {fileID: 7926007597573426438}
   m_Layer: 0
   m_Name: STOP AREA
   m_TagString: Untagged
@@ -286,6 +287,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.15, y: 2.65}
   m_EdgeRadius: 0
+--- !u!114 &7926007597573426438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213482325499241488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b8dc8012b6fbc449695969de271a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 8213482324073283391}
 --- !u!1001 &8213482323561723864
 PrefabInstance:
   m_ObjectHideFlags: 0
