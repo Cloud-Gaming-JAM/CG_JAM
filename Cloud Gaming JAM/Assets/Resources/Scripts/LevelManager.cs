@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour
     public float stopZoneTimer;
     [Range(50f, 200f)] public int speedBoost = 50;
     [Range(1.1f, 2.5f)] public float slowCoef = 1.5f;
+    [Range(50f, 200f)] public float BumpForce = 100f;
+    
     
 
     private void Awake()

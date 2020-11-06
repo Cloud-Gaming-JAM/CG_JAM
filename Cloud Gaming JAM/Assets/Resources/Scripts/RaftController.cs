@@ -102,11 +102,18 @@ public class RaftController : MonoBehaviour
     }
     #endregion
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.collider.CompareTag("Bumper"));
+            BumpWithObstacle(other);
+    }
+
     #region Bump
 
-    public void BumpWithObstacle()
+    public void BumpWithObstacle(Collision2D other)
     {
-        
+        Vector2 dir = raftRigidBody.velocity.normalized;
+        raftRigidBody.AddForce(-dir * LevelManager.instance.BumpForce); //raw version, it works when u collide ahead but some case a fucked up
     }
 
     #endregion
