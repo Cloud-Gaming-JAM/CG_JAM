@@ -40,15 +40,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8204756350278269156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c52049133cca94d97f95221a4223e6, type: 3}
+  m_Script: {fileID: 11500000, guid: cbeb5b4a16996db4186a20e3e1ac5322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MusicPrefab: {fileID: 0}
   sounds:
-  - clipName: MenuMusic
+  - clipName: 
     clip: {fileID: 8300000, guid: e5a4c0467893e9045ad40b95f4a21d68, type: 3}
     source: {fileID: 0}
-    volume: 0.5
+    volume: 0.7
+    pitch: 1
+    playOnAwake: 1
+    loop: 1
+  - clipName: 
+    clip: {fileID: 8300000, guid: e44f2dfb1658ea74cb3bf76a3b0bd0ad, type: 3}
+    source: {fileID: 0}
+    volume: 0.1
     pitch: 1
     playOnAwake: 1
     loop: 1
@@ -66,10 +73,3 @@ MonoBehaviour:
     pitch: 1
     playOnAwake: 0
     loop: 0
-  - clipName: RiverFlow
-    clip: {fileID: 8300000, guid: e44f2dfb1658ea74cb3bf76a3b0bd0ad, type: 3}
-    source: {fileID: 0}
-    volume: 0.1
-    pitch: 1
-    playOnAwake: 1
-    loop: 1
