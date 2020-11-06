@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3268176836803754418}
   - component: {fileID: 6310097274772771975}
   - component: {fileID: 2529080608666466719}
+  - component: {fileID: 7250129537957023824}
   m_Layer: 0
   m_Name: SpeedZone
   m_TagString: Untagged
@@ -71,6 +72,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3342566, y: 2.5899997}
   m_EdgeRadius: 0
+--- !u!210 &7250129537957023824
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893659946754549398}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1001 &7652158721332553224
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -130,6 +130,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FINISH LINE
       objectReference: {fileID: 0}
+    - target: {fileID: -685019074924045845, guid: 6f1355b2ca04774449d9117b308aa8fb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728629878484203760, guid: 6f1355b2ca04774449d9117b308aa8fb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113780443395464684, guid: 6f1355b2ca04774449d9117b308aa8fb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -9183220246892025535, guid: 6f1355b2ca04774449d9117b308aa8fb, type: 3}
 --- !u!4 &8142031695823673406 stripped
