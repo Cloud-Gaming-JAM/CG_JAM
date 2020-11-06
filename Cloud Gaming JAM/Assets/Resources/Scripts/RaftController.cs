@@ -197,8 +197,18 @@ public class RaftController : MonoBehaviour
             else if (playerController.state == PlayerMoveState.vertical)
                 playerController.state = PlayerMoveState.horizontal;
         }
-        characterPrefab[0].transform.SetParent(characterTransform[0].transform, false);
-        characterPrefab[1].transform.SetParent(characterTransform[1].transform, false);
+
+        if (playersOnRaft[0].state == PlayerMoveState.horizontal)
+        {
+            characterPrefab[0].transform.SetParent(characterTransform[0].transform, false);
+            characterPrefab[1].transform.SetParent(characterTransform[1].transform, false);
+        }
+        else
+        {
+            characterPrefab[0].transform.SetParent(characterTransform[1].transform, false);
+            characterPrefab[1].transform.SetParent(characterTransform[0].transform, false);
+        }
+        
     }
 
     #endregion
