@@ -40,48 +40,90 @@ MonoBehaviour:
   m_GameObject: {fileID: 8204756350278269156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c52049133cca94d97f95221a4223e6, type: 3}
+  m_Script: {fileID: 11500000, guid: cbeb5b4a16996db4186a20e3e1ac5322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MusicPrefab: {fileID: 0}
   sounds:
   - clipName: 
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 8cb4919a834c60e49a28cc93d3c32a34, type: 3}
+    source: {fileID: 0}
+    volume: 0.2
+    pitch: 1
+    playOnAwake: 1
+    loop: 1
+  - clipName: 
+    clip: {fileID: 8300000, guid: e44f2dfb1658ea74cb3bf76a3b0bd0ad, type: 3}
+    source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    playOnAwake: 1
+    loop: 1
+  - clipName: 
+    clip: {fileID: 8300000, guid: e01a48c67fb37e041814f91475864565, type: 3}
+    source: {fileID: 0}
+    volume: 0.05
+    pitch: 1
+    playOnAwake: 1
+    loop: 1
+  - clipName: TrunkBreak
+    clip: {fileID: 8300000, guid: a82fd19d4fd88194eab32c52be397111, type: 3}
     source: {fileID: 0}
     volume: 0.7
     pitch: 1
     playOnAwake: 0
     loop: 0
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: grunt1
+    clip: {fileID: 8300000, guid: 282d87c9d1e17584d8f6706f6840b8ef, type: 3}
     source: {fileID: 0}
     volume: 0.7
     pitch: 1
     playOnAwake: 0
     loop: 0
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: grunt2
+    clip: {fileID: 8300000, guid: 0c24fba18a67ebc4d984fc39369a6682, type: 3}
     source: {fileID: 0}
     volume: 0.7
     pitch: 1
     playOnAwake: 0
     loop: 0
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: grunt3
+    clip: {fileID: 8300000, guid: 1f73dcc6276b0e546aed046517c93b92, type: 3}
     source: {fileID: 0}
     volume: 0.7
     pitch: 1
     playOnAwake: 0
     loop: 0
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: grunt4
+    clip: {fileID: 8300000, guid: 633c4fafaae236a4889c0278402d1b2d, type: 3}
     source: {fileID: 0}
     volume: 0.7
     pitch: 1
     playOnAwake: 0
     loop: 0
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: grunt5
+    clip: {fileID: 8300000, guid: 28bcf7d0fa4e15b4898a2857602f3e16, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+  - clipName: oar1
+    clip: {fileID: 8300000, guid: 9547cc87ff081cf4a953f24245280365, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+  - clipName: oar2
+    clip: {fileID: 8300000, guid: e7b10010cf7d78d45b7aae61d1f4c6a5, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+  - clipName: oar3
+    clip: {fileID: 8300000, guid: 948eb4af836a07a4eb0fbaf596ae17f7, type: 3}
     source: {fileID: 0}
     volume: 0.7
     pitch: 1

@@ -31,7 +31,6 @@ public class AudioManager : MonoBehaviour
             pitch = 1f;
         }
     }
-    public GameObject MusicPrefab;
     public List<Sound> sounds = new List<Sound>() { new Sound(0.7f, 1) };
     public static AudioManager instance;
 
@@ -60,7 +59,6 @@ public class AudioManager : MonoBehaviour
             s.source.spatialize = false;
             s.source.spatialBlend = 1f;
         }
-        //MusicPrefab = Resources.Load<GameObject>("Prefab/Musique");
     }
 
     public void Start()
