@@ -1765,6 +1765,7 @@ GameObject:
   - component: {fileID: 7945647331855513450}
   - component: {fileID: 7945647331855513451}
   - component: {fileID: 7945647331855513448}
+  - component: {fileID: 6826077307764907458}
   m_Layer: 0
   m_Name: SLOW AREA.1
   m_TagString: Untagged
@@ -1825,6 +1826,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467215ec6c6d53d479396b51cf30ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &6826077307764907458
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647331855513449}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647331859309500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,6 +4257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647332034746485}
   - component: {fileID: 7945647332034746484}
+  - component: {fileID: 2398174722409993256}
   m_Layer: 0
   m_Name: Acceleration Area
   m_TagString: Untagged
@@ -4285,6 +4298,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &2398174722409993256
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332034746490}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332049500698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4378,6 +4402,7 @@ GameObject:
   - component: {fileID: 7945647332051059640}
   - component: {fileID: 7945647332051059642}
   - component: {fileID: 7945647332051059643}
+  - component: {fileID: 4926703683529842623}
   m_Layer: 0
   m_Name: SLOW AREA.1
   m_TagString: Untagged
@@ -4438,6 +4463,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467215ec6c6d53d479396b51cf30ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &4926703683529842623
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332051059641}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332055981659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6642,6 +6678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647332231828013}
   - component: {fileID: 7945647332231828012}
+  - component: {fileID: 3689767657109607096}
   m_Layer: 0
   m_Name: Acceleration Area
   m_TagString: Untagged
@@ -6682,6 +6719,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &3689767657109607096
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332231828050}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332236145692
 GameObject:
   m_ObjectHideFlags: 0
@@ -7148,6 +7196,7 @@ GameObject:
   - component: {fileID: 7945647332295827302}
   - component: {fileID: 7945647332295827296}
   - component: {fileID: 7945647332295827297}
+  - component: {fileID: 102290716141397439}
   m_Layer: 0
   m_Name: SLOW AREA
   m_TagString: Untagged
@@ -7208,6 +7257,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467215ec6c6d53d479396b51cf30ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &102290716141397439
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332295827303}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332297566754
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,7 +7601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7945647332257147688
 Transform:
   m_ObjectHideFlags: 0
@@ -9014,6 +9074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647332418769676}
   - component: {fileID: 7945647332418769679}
+  - component: {fileID: 6892623758475598144}
   m_Layer: 0
   m_Name: Speed area
   m_TagString: Untagged
@@ -9055,6 +9116,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &6892623758475598144
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332418769677}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332429174679
 GameObject:
   m_ObjectHideFlags: 0
@@ -12883,6 +12955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647332735710948}
   - component: {fileID: 7945647332735710951}
+  - component: {fileID: 5825369029646707316}
   m_Layer: 0
   m_Name: Acceleration Area
   m_TagString: Untagged
@@ -12923,6 +12996,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &5825369029646707316
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332735710949}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332737857791
 GameObject:
   m_ObjectHideFlags: 0
@@ -13383,6 +13467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647332760069347}
   - component: {fileID: 7945647332760069346}
+  - component: {fileID: 3370774939211810732}
   m_Layer: 0
   m_Name: Speed area
   m_TagString: Untagged
@@ -13424,6 +13509,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &3370774939211810732
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332760069344}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332763404490
 GameObject:
   m_ObjectHideFlags: 0
@@ -14508,6 +14604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647332834919722}
   - component: {fileID: 7945647332834919717}
+  - component: {fileID: 3685633946684395107}
   m_Layer: 0
   m_Name: Speed area
   m_TagString: Untagged
@@ -14549,6 +14646,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &3685633946684395107
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332834919723}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332842101354
 GameObject:
   m_ObjectHideFlags: 0
@@ -16860,6 +16968,7 @@ GameObject:
   - component: {fileID: 7945647332963758718}
   - component: {fileID: 7945647332963758719}
   - component: {fileID: 7945647332963758716}
+  - component: {fileID: 3045909449033071418}
   m_Layer: 0
   m_Name: SLOW AREA.2
   m_TagString: Untagged
@@ -16920,6 +17029,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467215ec6c6d53d479396b51cf30ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &3045909449033071418
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647332963758717}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647332978902921
 GameObject:
   m_ObjectHideFlags: 0
@@ -18977,6 +19097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647333109741369}
   - component: {fileID: 7945647333109741368}
+  - component: {fileID: 8600989056290213704}
   m_Layer: 0
   m_Name: Speed area
   m_TagString: Untagged
@@ -19018,6 +19139,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &8600989056290213704
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647333109741374}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647333111013152
 GameObject:
   m_ObjectHideFlags: 0
@@ -24004,6 +24136,7 @@ GameObject:
   - component: {fileID: 7945647333478025846}
   - component: {fileID: 7945647333478025847}
   - component: {fileID: 7945647333478025844}
+  - component: {fileID: 3946796770055374612}
   m_Layer: 0
   m_Name: SLOW AREA
   m_TagString: Untagged
@@ -24064,6 +24197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467215ec6c6d53d479396b51cf30ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &3946796770055374612
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647333478025845}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647333481503688
 GameObject:
   m_ObjectHideFlags: 0
@@ -27254,6 +27398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647333767341255}
   - component: {fileID: 7945647333767341254}
+  - component: {fileID: 8384722223868754284}
   m_Layer: 0
   m_Name: Acceleration Area
   m_TagString: Untagged
@@ -27294,6 +27439,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &8384722223868754284
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647333767341252}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647333772390606
 GameObject:
   m_ObjectHideFlags: 0
@@ -27304,6 +27460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945647333772390601}
   - component: {fileID: 7945647333772390600}
+  - component: {fileID: 6366481563846470901}
   m_Layer: 0
   m_Name: Acceleration Area
   m_TagString: Untagged
@@ -27344,6 +27501,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!210 &6366481563846470901
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945647333772390606}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &7945647333785687335
 GameObject:
   m_ObjectHideFlags: 0
@@ -29066,6 +29234,10 @@ PrefabInstance:
     - target: {fileID: 5308932583935019056, guid: 69852a0ac943e2e4b99bab8466cfb023, type: 3}
       propertyPath: m_Name
       value: StopZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308932583935019056, guid: 69852a0ac943e2e4b99bab8466cfb023, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5308932583935019058, guid: 69852a0ac943e2e4b99bab8466cfb023, type: 3}
       propertyPath: m_LocalPosition.x
