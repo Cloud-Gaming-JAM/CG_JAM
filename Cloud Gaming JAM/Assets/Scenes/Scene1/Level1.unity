@@ -388,6 +388,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5067164220685046299, guid: b0b7007db9891a942b5fc7a44a21c472, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b0b7007db9891a942b5fc7a44a21c472, type: 3}
+--- !u!114 &826190353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 219992049181287446, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
+  m_PrefabInstance: {fileID: 7565335951105848686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a053cfe03f6f6674fba88f3bbbcdbbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871626940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8330291000392553195, guid: fb5823c560e59014c98aa9c43feb6bcc, type: 3}
@@ -409,6 +420,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &871994105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4980419153082481882, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
+  m_PrefabInstance: {fileID: 7565335951105848686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a053cfe03f6f6674fba88f3bbbcdbbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958610446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8330290999539968050, guid: fb5823c560e59014c98aa9c43feb6bcc, type: 3}
@@ -899,6 +921,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1326393467454166133, guid: 43882aa87522bb745bade458099a6952, type: 3}
+      propertyPath: displacementLength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2784705035481437523, guid: 43882aa87522bb745bade458099a6952, type: 3}
       propertyPath: m_Name
       value: CameraRig
@@ -1125,11 +1151,11 @@ PrefabInstance:
     - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: rafts.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 871994105}
     - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: rafts.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 826190353}
     - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: raftSpeedCoef
       value: 1.2
