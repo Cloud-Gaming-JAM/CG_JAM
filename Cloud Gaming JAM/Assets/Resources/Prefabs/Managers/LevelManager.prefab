@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 4980419153082481882}
   - {fileID: 219992049181287446}
   nbrRaftInGame: 2
+  nbrPlayersJoined: 0
   nbrRaftOver: 0
   winnerTeam: 0
   raftSpeedCoef: 1.2

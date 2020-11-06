@@ -7,19 +7,17 @@ using Rewired;
 public class PlayerController : MonoBehaviour
 {
     public int teamId; //0 = no team, 1 = first team
-    public int playerId;
+    public int playerId; // playerId in game (team 1 = player 1 + player 2)
+    public int controllerId; // controllers in order of plug
     public Player player;
     public PlayerMoveState state;
     public JoyDir lastJoyDir;
     public JoyDir currentJoyDir;
     public Vector2[] joyDirVectors = new Vector2[4];
 
-    public bool debuggMode;
-    
-
     private void Awake()
     {
-        player = ReInput.players.GetPlayer(playerId);
+        player = ReInput.players.GetPlayer(controllerId);
         joyDirVectors[0] = Vector2.up;
         joyDirVectors[1] = Vector2.right;
         joyDirVectors[2] = Vector2.down;
@@ -34,21 +32,15 @@ public class PlayerController : MonoBehaviour
     private void HasToJoinOrQuit()
     {
         if (teamId == 0 && player.GetButtonDown("select"))
-            LevelManager.instance.AddNewPlayer(playerId);
+            LevelManager.instance.AddNewPlayer(this);
         
         else if (teamId > 0 && player.GetButtonDown("back"))
             LevelManager.instance.RemovePlayer(this);
     }
-
-    public void SetPlayerState(PlayerMoveState state)
-    {
-        this.state = state;
-    }
-
     public Vector2 GetPlayerInput()
     {
         Vector2 dir = Vector2.zero;
-        if (state == PlayerMoveState.horizontal && debuggMode)
+        if (state == PlayerMoveState.horizontal)
         {
             Vector2 dirBrut = new Vector2(player.GetAxis("moveHorizontal"), player.GetAxis("moveVertical"));
             if ((dirBrut.x < 0.25f && dirBrut.x > -0.25f) || (dirBrut.y < 0.25f && dirBrut.y > -0.25f)) return dir;
