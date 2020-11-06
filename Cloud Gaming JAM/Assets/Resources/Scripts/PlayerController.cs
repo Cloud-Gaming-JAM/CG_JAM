@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     private void HasToJoinOrQuit()
     {
+        if (!MenuController.instance.isInScreenPlayerSelection) return;
+        
         if (teamId == 0 && player.GetButtonDown("select"))
             LevelManager.instance.AddNewPlayer(this);
         

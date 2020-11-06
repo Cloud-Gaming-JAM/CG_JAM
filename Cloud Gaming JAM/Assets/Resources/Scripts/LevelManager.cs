@@ -64,7 +64,13 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Max nbr players reach");
             return;
         }
+        else if (nbrPlayersJoined == 3) 
+        {
+            MenuController.instance.LaunchGame();
+        }
 
+
+        MenuController.instance.SetActiveJoinPlayerImage(nbrPlayersJoined);
         nbrPlayersJoined++;
         int teamToJoin = 1;
         if (rafts[0].GetNbrPlayersOnRaft() == 2)
@@ -80,6 +86,7 @@ public class LevelManager : MonoBehaviour
     {
         int raftIndex = playerToRemove.teamId - 1;
         rafts[raftIndex].playersOnRaft.Remove(playerToRemove);
+        MenuController.instance.SetActiveLeavePlayerImage(playerToRemove.playerId);
         Debug.Log("Player " + playerToRemove.controllerId + " leave team : " +  playerToRemove.teamId);
         playerToRemove.teamId = 0;
         //FindObjectOfType<MenuController>().GetComponent<MenuController>().SetActiveJoinPlayerImage(false, playerToRemove.playerId);
