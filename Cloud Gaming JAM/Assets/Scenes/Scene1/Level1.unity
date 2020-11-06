@@ -948,7 +948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1645034078
 Transform:
   m_ObjectHideFlags: 0
@@ -987,6 +987,63 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
+--- !u!1001 &1727280730
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1171.2281
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 693.8945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -367.95255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853219601152946285, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204756350278269156, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
+      propertyPath: m_Name
+      value: Jukebox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0812ca23804955418dcefa69e43a74c, type: 3}
 --- !u!1 &1811674967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8330290999789392749, guid: fb5823c560e59014c98aa9c43feb6bcc, type: 3}
