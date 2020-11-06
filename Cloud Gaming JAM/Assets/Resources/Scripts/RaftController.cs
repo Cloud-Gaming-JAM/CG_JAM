@@ -136,7 +136,7 @@ public class RaftController : MonoBehaviour
     {
         Vector2 dir = other.relativeVelocity.normalized;
         raftRigidBody.AddForce(dir * LevelManager.instance.BumpForce);
-        AudioManager.instance.Play("grunt" + (int)UnityEngine.Random.Range(0, 5));
+        AudioManager.instance.Play("grunt" + (int)UnityEngine.Random.Range(1, 5));
     }
 
     #endregion
