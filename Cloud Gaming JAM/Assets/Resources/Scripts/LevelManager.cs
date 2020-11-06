@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        //CheckDebuggingControl();  //doesn't work since the new controls/move Loop
+        CheckDebuggingControl();  //doesn't work since the new controls/move Loop
     }
 
     private void ResetValues()
@@ -64,11 +64,8 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Max nbr players reach");
             return;
         }
-        else if (nbrPlayersJoined == 3) 
-        {
+        if (nbrPlayersJoined == 3) 
             MenuController.instance.LaunchGame();
-        }
-
 
         MenuController.instance.SetActiveJoinPlayerImage(nbrPlayersJoined);
         nbrPlayersJoined++;
@@ -78,7 +75,7 @@ public class LevelManager : MonoBehaviour
         newPlayer.teamId = teamToJoin;
         Debug.Log("Player " + newPlayer.controllerId + " join team : " +  newPlayer.teamId);
         newPlayer.playerId = nbrPlayersJoined;
-        AddPlayerOnRaft(newPlayer.controllerId, teamToJoin - 1);
+        AddPlayerOnRaft(newPlayer, teamToJoin - 1);
     }
 
     public void RemovePlayer(PlayerController playerToRemove)
@@ -92,10 +89,14 @@ public class LevelManager : MonoBehaviour
         nbrPlayersJoined--;
     }
     
-    private void AddPlayerOnRaft(int controllerId, int raftIndex)
+    private void AddPlayerOnRaft(PlayerController newPlayer, int raftIndex)
     {
         if (rafts[raftIndex].playersOnRaft.Count < 2)
-            rafts[raftIndex].playersOnRaft.Add(GameManager.instance.players[controllerId]);
+        {
+            rafts[raftIndex].playersOnRaft.Add(newPlayer);
+            if (rafts[raftIndex].playersOnRaft.Count == 1)
+                newPlayer.state = PlayerMoveState.vertical;
+        }
     }
     #endregion
     
@@ -104,12 +105,11 @@ public class LevelManager : MonoBehaviour
 
     void CheckDebuggingControl()
     {
-        if (GameManager.instance.gameState != GameState.inGame && !debugControlMode) return;
+        if (GameManager.instance.gameState != GameState.inGame || !debugControlMode) return;
 
         for (int i = 0; i < 2; i++)
         {
-            Vector2 dir = GetKeyboardInput(i) * raftSpeedCoef;
-            //rafts[i].Add = dir;
+            rafts[i].UpdateRaftForce(GetKeyboardInput(i));
         }
     }
 
@@ -121,10 +121,7 @@ public class LevelManager : MonoBehaviour
             if (ReInput.players.GetSystemPlayer().GetButton("right"))
                 dir.x = 1;
             else if (ReInput.players.GetSystemPlayer().GetButton("left"))
-            {
                 dir.x = -1;
-                Debug.Log("left !");
-            }
 
             if (ReInput.players.GetSystemPlayer().GetButton("up"))
                 dir.y = 1;

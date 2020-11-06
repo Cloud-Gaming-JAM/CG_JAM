@@ -46,7 +46,7 @@ MonoBehaviour:
   teamId: 0
   playerId: 0
   controllerId: 3
-  state: 1
+  state: 0
   lastJoyDir: 0
   currentJoyDir: 0
   joyDirVectors:
@@ -100,7 +100,7 @@ MonoBehaviour:
   teamId: 0
   playerId: 0
   controllerId: 1
-  state: 1
+  state: 0
   lastJoyDir: 0
   currentJoyDir: 0
   joyDirVectors:
