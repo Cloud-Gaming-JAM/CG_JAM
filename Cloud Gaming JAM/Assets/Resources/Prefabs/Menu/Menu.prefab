@@ -1617,7 +1617,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4323925612200916918}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 25dcef82dfdeffa4b878af3f00bba77a, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 7a9cb4cdda93164429facf62a368bbae, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -2060,6 +2060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
+  imagePlayerJoined: []
 --- !u!1 &8085129786532555840
 GameObject:
   m_ObjectHideFlags: 0
