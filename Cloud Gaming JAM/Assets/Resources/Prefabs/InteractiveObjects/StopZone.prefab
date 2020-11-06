@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stop area
       objectReference: {fileID: 0}
+    - target: {fileID: 8213482323776347815, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
 --- !u!4 &7137434402989446027 stripped
