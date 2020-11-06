@@ -54,6 +54,7 @@ MonoBehaviour:
   raftHorizontalSpeedCoef: 8
   maxNormalSpeed: {x: 5, y: 5}
   maxBoostSpeed: {x: 8, y: 5}
-  flowForceCoef: 0.985
+  friction: 0.9737
+  rawFlowForce: 12.16
   stopZoneTimer: 0
-  speedBoost: 41.4
+  speedBoost: 139

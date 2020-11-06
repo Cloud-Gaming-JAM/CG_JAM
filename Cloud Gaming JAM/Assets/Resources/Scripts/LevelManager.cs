@@ -19,12 +19,13 @@ public class LevelManager : MonoBehaviour
     [Range(3f, 10f)] public float raftHorizontalSpeedCoef = 1f; 
     public Vector2 maxNormalSpeed;
     public Vector2 maxBoostSpeed;
-    [Range(0.9f, 1f)] public float flowForceCoef;
+    [Range(0.97f, 1f)] public float friction;
+    [Range(5f, 20f)] public float rawFlowForce;
     
     
     [Header("Objects values")]
     public float stopZoneTimer;
-    [Range(0.5f, 150f)] public float speedBoost = 1f;
+    [Range(50f, 200f)] public int speedBoost = 50;
 
     private void Awake()
     {
