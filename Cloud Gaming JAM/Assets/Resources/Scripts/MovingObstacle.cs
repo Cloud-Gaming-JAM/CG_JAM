@@ -9,11 +9,12 @@ public class MovingObstacle : MonoBehaviour
     public bool flipSpriteOnEndCourse;
     Vector3 originalPosition;
     Rigidbody2D obstacleRigidBody;
-
+    SpriteRenderer obstacleSpriterenderer;
     // Start is called before the first frame update
     void Start()
     {
         obstacleRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        obstacleSpriterenderer = gameObject.GetComponent<SpriteRenderer>();
         originalPosition = transform.position;
     }
 
@@ -28,12 +29,11 @@ public class MovingObstacle : MonoBehaviour
         transform.position = originalPosition + new Vector3(0f, Mathf.Cos(Time.time * obstacleSpeed) * obstacleDistance, 0f);
         if (Mathf.Cos(Time.time * obstacleSpeed) > 0.99f && flipSpriteOnEndCourse)
         {
-
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            obstacleSpriterenderer.flipY = false;
         }
         else if (Mathf.Cos(Time.time * obstacleSpeed) < -0.99f && flipSpriteOnEndCourse)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 180);
+            obstacleSpriterenderer.flipY = true;
         }
     }
 }

@@ -8,7 +8,7 @@ public class RaftController : MonoBehaviour
     public float raftSpeedMultiplier = 1f;
 
     public List<PlayerController> playersOnRaft = new List<PlayerController>();
-    [HideInInspector] public int teamId;
+    public int teamId;
 
     [SerializeField] private Transform[] characterTransform = new Transform[2];
     public GameObject[] characterPrefab = new GameObject[2];
@@ -58,7 +58,8 @@ public class RaftController : MonoBehaviour
     #region UpdateCalls
     void Update()
     {
-        CheckAndApplyPlayersForce();
+        if(GameManager.instance.gameState == GameState.inGame)
+            CheckAndApplyPlayersForce();
     }
 
     void CheckAndApplyPlayersForce()
@@ -73,7 +74,7 @@ public class RaftController : MonoBehaviour
         UpdateRaftForce(playersInput);
         finalRaftForce *= raftSpeedMultiplier;
 
-        //ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
+        ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
     }
 
     Vector2 GetRaftPlayersInput()
@@ -134,7 +135,7 @@ public class RaftController : MonoBehaviour
         //Debug.Log("Before : " + finalRaftForce);
         if (finalRaftForce != Vector2.zero)
         {
-            //ClampRaftSpeed(LevelManager.instance.maxBoostSpeed);
+            ClampRaftSpeed(LevelManager.instance.maxBoostSpeed);
             raftRigidBody.AddForce(finalRaftForce);
             finalRaftForce = Vector2.zero;
         }

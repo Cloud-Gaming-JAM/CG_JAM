@@ -6,13 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    private static MenuController instance;
     //Second element will be shown on initialization
     public enum MenuScreen { NULL, TitleScreen, Menu, Options, CharacterSelection, Credits }
     public MenuScreen currentState = MenuScreen.TitleScreen;
     public Dictionary<MenuScreen, GameObject> menuLUT = new Dictionary<MenuScreen, GameObject>();
 
+    public GameObject[] imagePlayerJoined;
     void Start()
     {
+        instance = this;
         GatherMenuScreens();
         InitializeMenu();
     }
@@ -57,6 +60,13 @@ public class MenuController : MonoBehaviour
         currentState = (MenuScreen)state;
         menuLUT[(MenuScreen)state].SetActive(true);
     }
+
+    public void SetActiveJoinPlayerImage(bool active, int id)
+    {
+        imagePlayerJoined[id].SetActive(active);
+        Debug.Log("Set " + id + "to " + active);        
+    }
+    
     public void QuitGame()
     {
         Application.Quit();
