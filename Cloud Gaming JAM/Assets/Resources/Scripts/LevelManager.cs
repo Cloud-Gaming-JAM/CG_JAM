@@ -7,21 +7,29 @@ using Rewired;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public bool debugControlMode;
 
     public RaftController[] rafts = new RaftController[2];
     public int nbrRaftInGame;
     [HideInInspector] public int nbrRaftOver;
     [HideInInspector] public int winnerTeam;
-
+    
     [Header("Raft values")]
-    [Range(0.5f, 3f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
-    public float maxNormalSpeed;
-    public float maxBoostSpeed;
+    [Range(0.5f, 3f)] public float raftSpeedCoef = 1f; 
+    [Range(3f, 10f)] public float raftHorizontalSpeedCoef = 1f; 
+    public Vector2 maxNormalSpeed;
+    public Vector2 maxBoostSpeed;
+    [Range(0.97f, 1f)] public float friction;
+    [Range(5f, 20f)] public float rawFlowForce;
     
     
     [Header("Objects values")]
     public float stopZoneTimer;
-    [Range(0.5f, 150f)] public float speedBoost = 1f;
+    [Range(50f, 200f)] public int speedBoost = 50;
+    [Range(1.1f, 2.5f)] public float slowCoef = 1.5f;
+    [Range(50f, 200f)] public float BumpForce = 100f;
+    
+    
 
     private void Awake()
     {
@@ -40,7 +48,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        CheckDebuggingControl();
+        //CheckDebuggingControl();  //doesn't work since the new controls/move Loop
     }
 
     private void ResetValues()
@@ -55,25 +63,34 @@ public class LevelManager : MonoBehaviour
         if (rafts[0].GetNbrPlayersOnRaft() == 2)
             teamToJoin = 2;
         GameManager.instance.players[playerId].teamId = teamToJoin;
-        Debug.Log(GameManager.instance.players[playerId].teamId);
+        Debug.Log("Player " + playerId + " join team : " +  GameManager.instance.players[playerId].teamId);
         AddPlayerOnRaft(playerId, teamToJoin - 1);
     }
-    private void AddPlayerOnRaft(int playerId, int teamId)
+
+    public void RemovePlayer(PlayerController playerToRemove)
     {
-        if (rafts[teamId].playersOnRaft.Count < 2)
-            rafts[teamId].playersOnRaft.Add(GameManager.instance.players[playerId]);
+        int raftIndex = playerToRemove.teamId - 1;
+        rafts[raftIndex].playersOnRaft.Remove(playerToRemove);
+        Debug.Log("Player " + playerToRemove.playerId + " leave team : " +  playerToRemove.teamId);
+        playerToRemove.teamId = 0;
+    }
+    
+    private void AddPlayerOnRaft(int playerId, int raftIndex)
+    {
+        if (rafts[raftIndex].playersOnRaft.Count < 2)
+            rafts[raftIndex].playersOnRaft.Add(GameManager.instance.players[playerId]);
     }
 
     #region debugControls
 
     void CheckDebuggingControl()
     {
-        if (GameManager.instance.gameState != GameState.inGame) return;
+        if (GameManager.instance.gameState != GameState.inGame && !debugControlMode) return;
 
         for (int i = 0; i < 2; i++)
         {
-            Vector2 dir = GetKeyboardInput(i) * raftSpeedMultiplier;
-            rafts[i].raftRigidBody.velocity = dir;
+            Vector2 dir = GetKeyboardInput(i) * raftSpeedCoef;
+            //rafts[i].Add = dir;
         }
     }
 

@@ -43,12 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9334b46c39578644a8e14d94bcd3e27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugControlMode: 0
   rafts:
   - {fileID: 0}
   - {fileID: 0}
   nbrRaftInGame: 2
   nbrRaftOver: 0
   winnerTeam: 0
-  raftSpeedMultiplier: 1
+  raftSpeedCoef: 1.5
+  raftHorizontalSpeedCoef: 8
+  maxNormalSpeed: {x: 5, y: 5}
+  maxBoostSpeed: {x: 8, y: 5}
+  friction: 0.9737
+  rawFlowForce: 12.16
   stopZoneTimer: 0
-  speedBoost: 1
+  speedBoost: 139

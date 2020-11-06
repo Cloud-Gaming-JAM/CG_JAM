@@ -8,6 +8,10 @@ public class TrunkCollisionProbe : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        instance.CheckDamage(other.rigidbody);
+        if (other.relativeVelocity.magnitude >= 1)
+        {
+            instance.CheckDamage(other.rigidbody);
+        }
+
     }
 }

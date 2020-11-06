@@ -6,12 +6,15 @@ public class MovingObstacle : MonoBehaviour
 {
     [Range(0.2f, 5f)] public float obstacleSpeed = 1f;
     public float obstacleDistance = 1f;
+    public bool flipSpriteOnEndCourse;
     Vector3 originalPosition;
     Rigidbody2D obstacleRigidBody;
+    SpriteRenderer obstacleSpriterenderer;
     // Start is called before the first frame update
     void Start()
     {
         obstacleRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        obstacleSpriterenderer = gameObject.GetComponent<SpriteRenderer>();
         originalPosition = transform.position;
     }
 
@@ -23,6 +26,14 @@ public class MovingObstacle : MonoBehaviour
 
     void UpdateObstaclePosition()
     {
-        transform.position = originalPosition + new Vector3(0f, Mathf.Sin(Time.time * obstacleSpeed) * obstacleDistance, 0f);
+        transform.position = originalPosition + new Vector3(0f, Mathf.Cos(Time.time * obstacleSpeed) * obstacleDistance, 0f);
+        if (Mathf.Cos(Time.time * obstacleSpeed) > 0.99f && flipSpriteOnEndCourse)
+        {
+            obstacleSpriterenderer.flipY = false;
+        }
+        else if (Mathf.Cos(Time.time * obstacleSpeed) < -0.99f && flipSpriteOnEndCourse)
+        {
+            obstacleSpriterenderer.flipY = true;
+        }
     }
 }
