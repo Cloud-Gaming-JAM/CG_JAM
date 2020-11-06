@@ -494,7 +494,6 @@ GameObject:
   m_Component:
   - component: {fileID: 185071074782144772}
   - component: {fileID: 1326393467454166133}
-  - component: {fileID: 1549034677768262822}
   - component: {fileID: 678540001}
   m_Layer: 0
   m_Name: CameraRig
@@ -533,59 +532,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displacementLength: 1
-  displacementDuration: 4
+  displacementDuration: 2
   travelLUT:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.011320755
-      outSlope: 0.011320755
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0.8290688
-    - serializedVersion: 3
-      time: 0.75385785
-      value: 0.254832
-      inSlope: 0.6142459
-      outSlope: 1.4071945
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.31186244
-      outWeight: 0.4333884
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 3.0273888
-      outSlope: 3.0273888
-      tangentMode: 34
+      inSlope: 2.8532214
+      outSlope: 2.8532214
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
+      inWeight: 0.18133974
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1818360608 &1549034677768262822
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2784705035481437523}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 0
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 0
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 185071074782144772}
-    weight: 1
 --- !u!61 &678540001
 BoxCollider2D:
   m_ObjectHideFlags: 0
