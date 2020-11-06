@@ -15,11 +15,16 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && gameObject.activeSelf)
+
+    }
+
+    public void DisplayPauseMenu()
+    {
+        if (gameObject.activeSelf)
         {
             gameObject.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && !gameObject.activeSelf)
+        else if (!gameObject.activeSelf)
         {
             gameObject.SetActive(true);
         }
