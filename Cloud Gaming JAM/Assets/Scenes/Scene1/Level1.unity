@@ -1089,38 +1089,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 313012471, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 313012472, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 313012472, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 438656374, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746283575, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746283576, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746283576, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 842397370, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 185071074782144772, guid: 43882aa87522bb745bade458099a6952, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07783324
@@ -1165,21 +1133,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1326393467454166133, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: displacementLength
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2784705035481437523, guid: 43882aa87522bb745bade458099a6952, type: 3}
       propertyPath: m_Name
       value: CameraRig
-      objectReference: {fileID: 0}
-    - target: {fileID: 2784705035481437523, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048768584365736330, guid: 43882aa87522bb745bade458099a6952, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43882aa87522bb745bade458099a6952, type: 3}
