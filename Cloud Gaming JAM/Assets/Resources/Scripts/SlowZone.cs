@@ -17,6 +17,6 @@ public class SlowZone : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        other.GetComponent<RaftController>().raftSpeedMultiplier = LevelManager.instance.raftSpeedMultiplier;
+        other.GetComponent<RaftController>().raftSpeedMultiplier = LevelManager.instance.raftSpeedCoef;
     }
 }

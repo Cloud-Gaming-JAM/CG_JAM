@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             
             currentJoyDir = (JoyDir)GetJoyDir(dirBrut);
             dir = GetFinalDir();
-            Debug.Log("FinalDir " + dir);
+            //Debug.Log("FinalDir " + dir);
             lastJoyDir = currentJoyDir;
         }
         

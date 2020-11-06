@@ -7,6 +7,7 @@ using Rewired;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public bool debugControlMode;
 
     public RaftController[] rafts = new RaftController[2];
     public int nbrRaftInGame;
@@ -14,9 +15,11 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int winnerTeam;
 
     [Header("Raft values")]
-    [Range(0.5f, 3f)] public float raftSpeedMultiplier = 1f; //Raft's maximum speed, values below 1 will slow down the raft
-    public float maxNormalSpeed;
-    public float maxBoostSpeed;
+    [Range(0.5f, 3f)] public float raftSpeedCoef = 1f; 
+    [Range(3f, 10f)] public float raftHorizontalSpeedCoef = 1f; 
+    public Vector2 maxNormalSpeed;
+    public Vector2 maxBoostSpeed;
+    [Range(0.9f, 1f)] public float flowForceCoef;
     
     
     [Header("Objects values")]
@@ -40,7 +43,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        CheckDebuggingControl();
+        //CheckDebuggingControl();
     }
 
     private void ResetValues()
@@ -58,22 +61,25 @@ public class LevelManager : MonoBehaviour
         Debug.Log(GameManager.instance.players[playerId].teamId);
         AddPlayerOnRaft(playerId, teamToJoin - 1);
     }
-    private void AddPlayerOnRaft(int playerId, int teamId)
+    
+    private void AddPlayerOnRaft(int playerId, int raftIndex)
     {
-        if (rafts[teamId].playersOnRaft.Count < 2)
-            rafts[teamId].playersOnRaft.Add(GameManager.instance.players[playerId]);
+        if (rafts[raftIndex].playersOnRaft.Count < 2)
+            rafts[raftIndex].playersOnRaft.Add(GameManager.instance.players[playerId]);
+        
+        
     }
 
     #region debugControls
 
     void CheckDebuggingControl()
     {
-        if (GameManager.instance.gameState != GameState.inGame) return;
+        if (GameManager.instance.gameState != GameState.inGame && !debugControlMode) return;
 
         for (int i = 0; i < 2; i++)
         {
-            Vector2 dir = GetKeyboardInput(i) * raftSpeedMultiplier;
-            rafts[i].raftRigidBody.velocity = dir;
+            Vector2 dir = GetKeyboardInput(i) * raftSpeedCoef;
+            //rafts[i].Add = dir;
         }
     }
 

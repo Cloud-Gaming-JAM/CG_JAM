@@ -16,10 +16,6 @@ public class RaftController : MonoBehaviour
     private Vector2 finalRaftForce;
 
     private float flowForceCoef;
-
-    private Vector2 lastInput;
-    private Vector2 currentInput;
-    private float deltaInputs;
     #endregion
     
     #region PrivateMethods
@@ -32,39 +28,19 @@ public class RaftController : MonoBehaviour
 
     void InitValues()
     {
-        raftSpeedMultiplier = LevelManager.instance.raftSpeedMultiplier;
+        raftSpeedMultiplier = LevelManager.instance.raftSpeedCoef;
+        flowForceCoef = LevelManager.instance.flowForceCoef;
     }
     
     //Checks if all variables a set up properly
     void PreStartCheck()
     {
-        if(raftRigidBody == null)
-        {
-            Debug.LogError("Raft dosen't contain a RigidBody component");
-        }
         if(playersOnRaft.Count == 0)
         {
             Debug.LogError("Raft has no players on board");
         }
     }
 
-    ///<summary>
-    ///Updates the raft instance's speed, meant to be used in a Update() loop, takes an Input Vector.
-    ///<param name="calculatedInput">Mixed input vector.</param>
-    ///</summary>
-    void UpdateRaftSpeed()
-    {
-        Vector2 raftMixedInput = new Vector2(0f,0f);
-        foreach(PlayerController instance in playersOnRaft)
-        {
-            raftMixedInput += instance.GetPlayerInput();
-        }
-        raftMixedInput *= raftSpeedMultiplier;
-        
-        if (raftMixedInput != Vector2.zero)
-            raftRigidBody.velocity = raftMixedInput;
-    }
-    
     void UpdateRaftForce(Vector2 forceToAdd)
     {
         finalRaftForce += forceToAdd;
@@ -80,36 +56,58 @@ public class RaftController : MonoBehaviour
         return raftMixedInput;
     }
     
-    void ClampRaftSpeed(float maxSpeed)
+    void ClampRaftSpeed(Vector2 maxSpeed)
     {
-        if (finalRaftForce.x > maxSpeed)
-            finalRaftForce.x = maxSpeed;
-        else if (finalRaftForce.x < -maxSpeed)
-            finalRaftForce.x = -maxSpeed;
+        Vector2 newVelocity = new Vector2(raftRigidBody.velocity.x + finalRaftForce.x, raftRigidBody.velocity.y + finalRaftForce.y);
+
+        if (newVelocity.x > maxSpeed.x)
+            finalRaftForce.x = maxSpeed.x - raftRigidBody.velocity.x;
+        else if (newVelocity.x < -maxSpeed.x)
+            finalRaftForce.x = -maxSpeed.x + raftRigidBody.velocity.x;
         
-        if (finalRaftForce.y > maxSpeed)
-            finalRaftForce.y = maxSpeed;
-        else if (finalRaftForce.y < -maxSpeed)
-            finalRaftForce.y = -maxSpeed;
+        if (newVelocity.y > maxSpeed.y)
+            finalRaftForce.y = maxSpeed.y - raftRigidBody.velocity.y;
+        else if (newVelocity.y < -maxSpeed.y)
+            finalRaftForce.y = -maxSpeed.y + raftRigidBody.velocity.y;
     }
     
     // Update is called once per frame
     void Update()
     {
-        UpdateRaftForce(GetRaftPlayersInput());
-        ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
+        CheckAndApplyPlayersForce();
     }
 
+    void CheckAndApplyPlayersForce()
+    {
+        Vector2 playersInput = GetRaftPlayersInput();   
+        if (playersInput == Vector2.zero) return;
+        
+        if(playersInput.x != 0)
+            playersInput.x *= LevelManager.instance.raftHorizontalSpeedCoef;
+        
+        Debug.Log("UpdateRafForce");
+        UpdateRaftForce(playersInput);
+        finalRaftForce *= raftSpeedMultiplier;
+        
+        ClampRaftSpeed(LevelManager.instance.maxNormalSpeed);
+    }
+    
     private void ApplyFlowForce()
     {
         raftRigidBody.velocity *= flowForceCoef;
-        //if (raftRigidBody.velocity.x < 0.005f) raftRigidBody.velocity.x = 0;
+        if (Mathf.Approximately(0f, raftRigidBody.velocity.x))
+            raftRigidBody.velocity = new Vector2(0, raftRigidBody.velocity.y);
     }
     
     private void ApplyNewSpeed()
     {
-        ClampRaftSpeed(LevelManager.instance.maxBoostSpeed);
-        raftRigidBody.AddForce(finalRaftForce);
+        Debug.Log("Before : " + finalRaftForce);
+        if (finalRaftForce != Vector2.zero)
+        {
+            ClampRaftSpeed(LevelManager.instance.maxBoostSpeed);
+            raftRigidBody.AddForce(finalRaftForce);
+            finalRaftForce = Vector2.zero;
+        }
     }
 
     void FixedUpdate()
@@ -124,6 +122,11 @@ public class RaftController : MonoBehaviour
     public int GetNbrPlayersOnRaft()
     {
         return playersOnRaft.Count;
+    }
+
+    public void SwitchPlayerStates()
+    {
+        
     }
     
     #endregion
