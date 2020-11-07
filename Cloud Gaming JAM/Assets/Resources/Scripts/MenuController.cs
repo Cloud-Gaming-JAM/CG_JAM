@@ -14,6 +14,8 @@ public class MenuController : MonoBehaviour
     public Dictionary<MenuScreen, GameObject> menuLUT = new Dictionary<MenuScreen, GameObject>();
 
     public GameObject[] imagePlayerJoined;
+    public Sprite[] charNotSelected;
+    public Sprite[] charSelected;
 
     public bool isInScreenPlayerSelection = false;
     void Start()
@@ -83,11 +85,13 @@ public class MenuController : MonoBehaviour
     public void SetActiveJoinPlayerImage(int id)
     {
         imagePlayerJoined[id].GetComponent<Image>().color = Color.white;
+        imagePlayerJoined[id].GetComponent<Image>().sprite = charSelected[id];
     }
     
     public void SetActiveLeavePlayerImage(int id)
     {
         imagePlayerJoined[id - 1].GetComponent<Image>().color = new Color(1,1,1,0.3f);
+        imagePlayerJoined[id].GetComponent<Image>().sprite = charNotSelected[id];
     }
     
     public void QuitGame()
