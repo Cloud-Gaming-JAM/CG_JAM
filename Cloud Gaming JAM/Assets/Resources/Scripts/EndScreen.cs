@@ -4,7 +4,11 @@ using UnityEngine.UI;
 
 public class EndScreen : MonoBehaviour
 {
-
+    public static EndScreen instance;
+    void Init()
+    {
+        instance = this;
+    }
     void OnEnable()
     {
         Time.timeScale = 0f;

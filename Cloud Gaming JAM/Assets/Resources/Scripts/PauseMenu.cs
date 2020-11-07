@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu instance;
+    void Init()
+    {
+        instance = this;
+    }
     void OnEnable()
     {
         Time.timeScale = 0f;
@@ -15,6 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+
 
     }
 

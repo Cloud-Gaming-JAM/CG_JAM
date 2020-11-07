@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Range(0.2f, 10f)] public float displacementLength = 1f;
-    [Range(1.1f, 10f)] public float displacementDuration = 2f;
     public AnimationCurve travelLUT;
     Collider2D travelTrigger;
     bool travelOnce = false;
@@ -26,22 +24,22 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         startPosition = transform.position;
-        endPosition = transform.position + new Vector3(displacementLength, 0f, 0f);
     }
-    void Travel()
+    void Travel(Collider2D raft)
     {
+        endPosition = transform.position + new Vector3(raft.attachedRigidbody.velocity.x, 0f, 0f);
         if (!travelOnce)
         {
             Debug.Log("Camera Interp Travel");
             travelOnce = true;
-            StartCoroutine(TravelRoutine(startPosition, endPosition, displacementDuration));
+            StartCoroutine(TravelRoutine(startPosition, endPosition, 1f));
         }
 
     }
 
     void OnTriggerStay2D(Collider2D raft)
     {
-        Travel();
+        Travel(raft);
     }
 
     IEnumerator TravelRoutine(Vector3 startPos, Vector3 endPos, float endtime)

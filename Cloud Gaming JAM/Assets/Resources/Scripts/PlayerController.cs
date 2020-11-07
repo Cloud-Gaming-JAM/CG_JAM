@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Rewired;
 
 public class PlayerController : MonoBehaviour
@@ -27,21 +28,23 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HasToJoinOrQuit();
-        if(playerId == 1 && player.GetButtonDown("start"))
-            Debug.Log("START !!!");
+        if (playerId == 1 && player.GetButtonDown("start") && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            PauseMenu.instance.DisplayPauseMenu();
+        }
     }
 
     private void HasToJoinOrQuit()
     {
         if (GameManager.instance.gameState != GameState.inMenu || !MenuController.instance.isInScreenPlayerSelection) return;
-        
+
         if (teamId == 0 && player.GetButtonDown("select"))
             LevelManager.instance.AddNewPlayer(this);
-        
+
         else if (teamId > 0 && player.GetButtonDown("back"))
             LevelManager.instance.RemovePlayer(this);
     }
-    
+
     public Vector2 GetMovePlayerInput()
     {
         Vector2 dir = Vector2.zero;
@@ -49,13 +52,13 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 dirBrut = new Vector2(player.GetAxis("moveHorizontal"), player.GetAxis("moveVertical"));
             if ((dirBrut.x < 0.25f && dirBrut.x > -0.25f) || (dirBrut.y < 0.25f && dirBrut.y > -0.25f)) return dir;
-            
+
             currentJoyDir = (JoyDir)GetJoyDir(dirBrut);
             dir = GetFinalDir();
             //Debug.Log("FinalDir " + dir);
             lastJoyDir = currentJoyDir;
         }
-        
+
         else if (state == PlayerMoveState.vertical)
         {
             dir.y = player.GetAxis("moveVertical");
@@ -72,11 +75,11 @@ public class PlayerController : MonoBehaviour
         }
         return 0;
     }
-    
+
     private Vector2 GetFinalDir()
     {
         Vector2 finalDir = Vector2.zero;
-        
+
         if (currentJoyDir - lastJoyDir == 1 || (currentJoyDir == JoyDir.up && lastJoyDir == JoyDir.left))
         {
             finalDir = Vector2.right;
