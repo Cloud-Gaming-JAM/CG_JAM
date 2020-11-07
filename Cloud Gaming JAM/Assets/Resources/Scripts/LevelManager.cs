@@ -76,6 +76,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Player " + newPlayer.controllerId + " join team : " +  newPlayer.teamId);
         newPlayer.playerId = nbrPlayersJoined;
         AddPlayerOnRaft(newPlayer, teamToJoin - 1);
+        newPlayer.VibrateController();
     }
 
     public void RemovePlayer(PlayerController playerToRemove)

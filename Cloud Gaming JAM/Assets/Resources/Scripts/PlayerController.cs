@@ -90,6 +90,16 @@ public class PlayerController : MonoBehaviour
         }
         return finalDir;
     }
+    
+    public void VibrateController()
+    {
+        // Set vibration in all Joysticks assigned to the Player
+        int motorIndex = 0; // the first motor
+        float motorLevel = 1.0f; // full motor speed
+        float duration = 0.5f; // 2 seconds
+
+        player.SetVibration(motorIndex, motorLevel, duration);
+    }
 }
 
 public enum PlayerMoveState
