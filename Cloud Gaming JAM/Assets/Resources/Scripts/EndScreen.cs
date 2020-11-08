@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class EndScreen : MonoBehaviour
 {
     public static EndScreen instance;
-    void Init()
+    public GameObject team1Sprites;
+    public GameObject team2Sprites;
+    void Awake()
     {
         instance = this;
+        gameObject.SetActive(false);
     }
     void OnEnable()
     {
@@ -21,13 +25,23 @@ public class EndScreen : MonoBehaviour
 
     public void EnableEndScreen(int teamWhoWon)
     {
-        foreach (Text text in GetComponentsInChildren<Text>())
+        gameObject.SetActive(true);
+        foreach (TextMeshProUGUI text in GetComponentsInChildren<TextMeshProUGUI>())
         {
-            if (text.gameObject.name == "WinnerText")
+            if (text.gameObject.tag == "WinnerText")
             {
                 text.text = "TEAM " + teamWhoWon + " HAS WON";
             }
         }
+        if (teamWhoWon == 1)
+        {
+            team1Sprites.SetActive(true);
+        }
+        else
+        {
+            team2Sprites.SetActive(true);
+        }
+
     }
     public void ResetGame()
     {
@@ -35,7 +49,7 @@ public class EndScreen : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 
 }

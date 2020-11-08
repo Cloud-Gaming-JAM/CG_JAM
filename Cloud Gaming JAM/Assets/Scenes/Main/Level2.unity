@@ -477,7 +477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSpeed: 1
   obstacleDistance: 1
-  flipSpriteOnEndCourse: 1
 --- !u!61 &207946003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -859,7 +858,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSpeed: 1
   obstacleDistance: 1
-  flipSpriteOnEndCourse: 1
 --- !u!61 &446852777
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1625,7 +1623,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSpeed: 1
   obstacleDistance: 1
-  flipSpriteOnEndCourse: 1
 --- !u!61 &1045018937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1882,7 +1879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3285149671110784592, guid: fbadd5183a771e240b9c6dd17e1199f0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbadd5183a771e240b9c6dd17e1199f0, type: 3}
@@ -3031,7 +3028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3285149671110784592, guid: f716f46418516904683e8103f37d8898, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f716f46418516904683e8103f37d8898, type: 3}
@@ -3264,7 +3261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSpeed: 1
   obstacleDistance: 1
-  flipSpriteOnEndCourse: 1
 --- !u!61 &2048270219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3617,6 +3613,10 @@ PrefabInstance:
     - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: maxBoostSpeed.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
+      propertyPath: debugControlMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7565335949427418646, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: m_Name

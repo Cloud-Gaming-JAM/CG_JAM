@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 2820792391755923648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.28, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 3661965338700512596}
   - {fileID: 8413422696026432920}
@@ -167,6 +167,7 @@ MonoBehaviour:
   raftSpeedMultiplier: 1
   playersOnRaft: []
   teamId: 1
+  oarSoundIntermitence: 2
   characterTransform:
   - {fileID: 5158787975277141224}
   - {fileID: 4431187356453791016}
@@ -685,6 +686,7 @@ MonoBehaviour:
   raftSpeedMultiplier: 1
   playersOnRaft: []
   teamId: 2
+  oarSoundIntermitence: 2
   characterTransform:
   - {fileID: 109250893008290852}
   - {fileID: 8893813368607309284}

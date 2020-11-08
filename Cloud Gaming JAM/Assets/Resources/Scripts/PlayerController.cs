@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HasToJoinOrQuit();
-        if (playerId == 1 && player.GetButtonDown("start") && SceneManager.GetActiveScene().buildIndex == 1)
+        if (player.GetButtonDown("start") && SceneManager.GetActiveScene().buildIndex == 1)
         {
             PauseMenu.instance.DisplayPauseMenu();
         }
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         }
         return finalDir;
     }
-    
+
     public void VibrateController()
     {
         // Set vibration in all Joysticks assigned to the Player
