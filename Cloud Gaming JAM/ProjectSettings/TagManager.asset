@@ -47,6 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 
+  - name: Fog
     uniqueID: 1470605367
+    locked: 0
+  - name: Deco Front
+    uniqueID: 2024776785
     locked: 0

@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = newState;
     }
+    
 }
 
 public enum GameState

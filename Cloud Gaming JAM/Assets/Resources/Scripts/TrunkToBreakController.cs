@@ -19,7 +19,7 @@ public class TrunkToBreakController : MonoBehaviour
         {
             AudioManager.instance.Play("TrunkBreak");
             normalTrunk.SetActive(false);
-            //trunk animation
+            GetComponentInChildren<Animation>().Play();
             brokenTrunk.SetActive(true);
         }
     }
