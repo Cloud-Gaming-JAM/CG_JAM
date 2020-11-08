@@ -33,6 +33,12 @@ public class GameManager : MonoBehaviour
         // }
     }
 
+    private void Update()
+    {
+        if (gameState == GameState.inGame)
+            CheckRaftBehindAndResetPos();
+    }
+
     public int GetNbrController()
     {
         Debug.Log("there is " + ReInput.controllers.joystickCount + " joy controllers");
@@ -43,7 +49,17 @@ public class GameManager : MonoBehaviour
     {
         gameState = newState;
     }
-    
+
+    void CheckRaftBehindAndResetPos()
+    {
+        Vector3 cameraPos = Camera.main.transform.position;
+        foreach (RaftController raft in LevelManager.instance.rafts)
+        {
+            Debug.Log("raft pos : " + raft.transform.position + "  camera delta " + (cameraPos.x -11));
+            if (raft.transform.position.x < (cameraPos.x - 11))
+                raft.transform.position = new Vector3(cameraPos.x - 5, cameraPos.y, 0);
+        }
+    }
 }
 
 public enum GameState
