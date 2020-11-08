@@ -60,9 +60,21 @@ public class MenuController : MonoBehaviour
             isInScreenPlayerSelection = true;
 
         }
+    }
+    public void ChangeMenuState(int state)
+    {
+        foreach (KeyValuePair<MenuScreen, GameObject> screen in menuLUT)
+        {
+            screen.Value.SetActive(false);
+        }
+        currentState = (MenuScreen)state;
+        menuLUT[(MenuScreen)state].SetActive(true);
+        if (state == 3)
+        {
+            isInScreenPlayerSelection = true;
+        }
         else
         {
-
             foreach (PlayerController player in GameManager.instance.players)
             {
                 player.playerId = 0;
@@ -79,23 +91,6 @@ public class MenuController : MonoBehaviour
             isInScreenPlayerSelection = false;
         }
     }
-    public void ChangeMenuState(int state)
-    {
-        foreach (KeyValuePair<MenuScreen, GameObject> screen in menuLUT)
-        {
-            screen.Value.SetActive(false);
-        }
-        currentState = (MenuScreen)state;
-        menuLUT[(MenuScreen)state].SetActive(true);
-        if (state == 3)
-        {
-            isInScreenPlayerSelection = true;
-        }
-        else
-        {
-            isInScreenPlayerSelection = false;
-        }
-    }
 
     public void SetActiveJoinPlayerImage(int id)
     {
@@ -106,7 +101,7 @@ public class MenuController : MonoBehaviour
     public void SetActiveLeavePlayerImage(int id)
     {
         imagePlayerJoined[id - 1].GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
-        imagePlayerJoined[id].GetComponent<Image>().sprite = charNotSelected[id];
+        imagePlayerJoined[id - 1].GetComponent<Image>().sprite = charNotSelected[id];
     }
 
     public void QuitGame()
