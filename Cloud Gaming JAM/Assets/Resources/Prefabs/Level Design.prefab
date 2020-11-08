@@ -15544,7 +15544,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3321454854861756371, guid: bb8f3b6925d43c44c86070bcefa39862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15606,7 +15606,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 49
 --- !u!1 &7945647332958739055
 GameObject:
   m_ObjectHideFlags: 0
@@ -26393,6 +26393,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7945647332751507944}
     m_Modifications:
+    - target: {fileID: 1456632979904346182, guid: 69852a0ac943e2e4b99bab8466cfb023, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425064500434230938, guid: 69852a0ac943e2e4b99bab8466cfb023, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5308932583935019056, guid: 69852a0ac943e2e4b99bab8466cfb023, type: 3}
       propertyPath: m_Name
       value: StopZone
