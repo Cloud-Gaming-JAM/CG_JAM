@@ -100,8 +100,8 @@ public class MenuController : MonoBehaviour
 
     public void SetActiveLeavePlayerImage(int id)
     {
-        imagePlayerJoined[id - 1].GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
-        imagePlayerJoined[id - 1].GetComponent<Image>().sprite = charNotSelected[id];
+        imagePlayerJoined[id].GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
+        imagePlayerJoined[id].GetComponent<Image>().sprite = charNotSelected[id];
     }
 
     public void QuitGame()
