@@ -1637,7 +1637,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4323925612200916918}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7a9cb4cdda93164429facf62a368bbae, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: d8e410020e3d43b419353967b02cfcae, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1646,7 +1646,7 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
-  m_AspectRatio: 1
+  m_AspectRatio: 0
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
@@ -2084,6 +2084,8 @@ MonoBehaviour:
   - {fileID: 165524217}
   - {fileID: 1247047015}
   - {fileID: 484174376}
+  charNotSelected: []
+  charSelected: []
   isInScreenPlayerSelection: 0
 --- !u!1 &8085129786532555840
 GameObject:
@@ -2965,6 +2967,22 @@ PrefabInstance:
       propertyPath: m_SubmitButton
       value: UICancel
       objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: horizontalActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: verticalActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: submitActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: cancelActionId
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
 --- !u!4 &3975671515074204178 stripped
@@ -3035,6 +3053,22 @@ PrefabInstance:
       propertyPath: rewiredInputManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: horizontalActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: verticalActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: submitActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: cancelActionId
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
 --- !u!4 &7270666251760589587 stripped
@@ -3104,6 +3138,22 @@ PrefabInstance:
     - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
       propertyPath: rewiredInputManager
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: horizontalActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: verticalActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: submitActionId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461136, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
+      propertyPath: cancelActionId
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14ee31e976b2b344fb160d8a2deffe62, type: 3}
