@@ -10,15 +10,14 @@ public class StopZone : MonoBehaviour
     [SerializeField] Animation anim;
     
     [SerializeField] float time;
-    [SerializeField] float activationTime;
+    [SerializeField] float activationTime = 1;
 
     [SerializeField] bool isInZone;
-    [SerializeField] bool isActive;
+    bool isActive = true;
     
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animation>();
         activationTime = LevelManager.instance.stopZoneTimer;
     }
 
@@ -55,7 +54,7 @@ public class StopZone : MonoBehaviour
     {
         Debug.Log("active wall");
         wall.enabled = false;
-        anim.Play("openBarrage");
+        anim.Play("Beavers-GoThrough");
         isActive = false;
         //Destroy(this, anim.clip.length);
     }
