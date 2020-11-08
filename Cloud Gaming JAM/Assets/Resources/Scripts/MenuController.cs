@@ -84,6 +84,7 @@ public class MenuController : MonoBehaviour
             {
                 raft.playersOnRaft.Clear();
             }
+            MenuController.instance.SetActiveLeavePlayerImage(0);
             MenuController.instance.SetActiveLeavePlayerImage(1);
             MenuController.instance.SetActiveLeavePlayerImage(2);
             MenuController.instance.SetActiveLeavePlayerImage(3);
@@ -100,7 +101,7 @@ public class MenuController : MonoBehaviour
 
     public void SetActiveLeavePlayerImage(int id)
     {
-        imagePlayerJoined[id].GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
+        imagePlayerJoined[id - 1].GetComponent<Image>().color = new Color(1, 1, 1, 0.3f);
         imagePlayerJoined[id].GetComponent<Image>().sprite = charNotSelected[id];
     }
 
