@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9566674, y: 2.7333312}
+  m_AnchoredPosition: {x: 2.35, y: 2.7333312}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8903967680748188679
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'FRONT OF THE RAFT : DIRECTION'
+  m_text: 'FRONT OF THE RAFT : SPEED'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24f0064b67d0ca84d8d4ae4f048968bb, type: 2}
   m_sharedMaterial: {fileID: 3998766913001067823, guid: 24f0064b67d0ca84d8d4ae4f048968bb, type: 2}
@@ -180,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8903967681323650027}
   - component: {fileID: 8801655669569612837}
+  - component: {fileID: 703187055}
   m_Layer: 0
   m_Name: Tuto PREFAB
   m_TagString: Untagged
@@ -194,7 +195,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903967681323650024}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07783324, y: 0.8880812, z: -2.0717924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -218,6 +219,20 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &703187055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903967681323650024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2da98a609e0154dab35d879b576052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joyParent: {fileID: 9005102028970419323}
+  over: 1
 --- !u!1 &8903967682063698229
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4621406871805985394, guid: c6c8af780669b1d4a8288b67b597ae37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.79
+      value: 6.91
       objectReference: {fileID: 0}
     - target: {fileID: 4621406871805985394, guid: c6c8af780669b1d4a8288b67b597ae37, type: 3}
       propertyPath: m_LocalPosition.y
@@ -469,10 +484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458851709091789971, guid: c6c8af780669b1d4a8288b67b597ae37, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6c8af780669b1d4a8288b67b597ae37, type: 3}
+--- !u!1 &9005102028970419323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7458851709091789969, guid: c6c8af780669b1d4a8288b67b597ae37, type: 3}
+  m_PrefabInstance: {fileID: 1980359571894786282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9005102028970419322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7458851709091789968, guid: c6c8af780669b1d4a8288b67b597ae37, type: 3}
