@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class Tuto : MonoBehaviour
 {
-    public float[] raftsPos = new float[LevelManager.instance.nbrRaftInGame];
-
-    private bool over;
+    public GameObject joyParent;
+    
+    float[] raftsPos = new float[LevelManager.instance.nbrRaftInGame];
+    bool over;
+    
     void Update()
     {
         if(!over)
