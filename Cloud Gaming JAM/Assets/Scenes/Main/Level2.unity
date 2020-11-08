@@ -1881,6 +1881,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6081265326716003120, guid: fbadd5183a771e240b9c6dd17e1199f0, type: 3}
+      propertyPath: useAllRewiredGamePlayers
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbadd5183a771e240b9c6dd17e1199f0, type: 3}
 --- !u!1001 &1131774275
@@ -2938,6 +2942,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1204489670142329142, guid: f716f46418516904683e8103f37d8898, type: 3}
+      propertyPath: useRewiredSystemPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204489670142329142, guid: f716f46418516904683e8103f37d8898, type: 3}
+      propertyPath: useAllRewiredGamePlayers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2268909891823246974, guid: f716f46418516904683e8103f37d8898, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

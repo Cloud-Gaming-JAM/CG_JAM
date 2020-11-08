@@ -96,7 +96,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 658
       y: 4
       width: 679
       height: 886
@@ -110,21 +110,65 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 3, y: -57}
+    uvTransform: {x: 657, y: -57}
+  - name: FOG 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 646
+      height: 952
+    spriteID: 9d0f03a7d043fc34083ca2da019ddd52
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: FOG 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1345
+      y: 4
+      width: 625
+      height: 893
+    spriteID: 7347910b0e2dcd242b083cf78df013c3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1327, y: -45}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 1024
-  importedTextureHeight: 1024
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
   documentSize: {x: 680, y: 952}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 1024
-  textureActualHeight: 1024
+  textureActualWidth: 2048
+  textureActualHeight: 2048
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
@@ -137,13 +181,27 @@ ScriptedImporter:
     spriteID: 00000000000000000000000000000000
     layerID: 778
     mosaicPosition: {x: 0, y: 0}
+  - name: FOG 3
+    spriteName: FOG 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9d0f03a7d043fc34083ca2da019ddd52
+    layerID: 777
+    mosaicPosition: {x: 4, y: 4}
+  - name: FOG 2
+    spriteName: FOG 2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7347910b0e2dcd242b083cf78df013c3
+    layerID: 776
+    mosaicPosition: {x: 1345, y: 4}
   - name: FOG 1
     spriteName: FOG 1
     isGroup: 0
     parentIndex: 0
     spriteID: 800cc7d5a411d0b4bbf1b3e3dbfa3634
     layerID: 775
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 658, y: 4}
   characterData:
     bones: []
     parts: []
