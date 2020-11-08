@@ -79,6 +79,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 0}
+  anim: {fileID: 0}
+  time: 0
+  activationTime: 0
+  isInZone: 0
+  isActive: 0
 --- !u!61 &5971386986865577475
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,7 +390,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4178475251385237254, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
       propertyPath: m_Animations.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4178475251385237254, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
       propertyPath: m_Animation
@@ -393,6 +398,10 @@ PrefabInstance:
       objectReference: {fileID: 7400000, guid: 5c95dbcd63dca754380b632f0b773338, type: 2}
     - target: {fileID: 4178475251385237254, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
       propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 74fa22ef2114f4e40915a84830568ff6, type: 2}
+    - target: {fileID: 4178475251385237254, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
+      propertyPath: m_Animations.Array.data[1]
       value: 
       objectReference: {fileID: 7400000, guid: 5c95dbcd63dca754380b632f0b773338, type: 2}
     - target: {fileID: 6281031962094489539, guid: 869dab15b230d0f4c8d453d89a086111, type: 3}
