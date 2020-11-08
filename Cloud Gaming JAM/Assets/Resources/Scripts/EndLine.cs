@@ -6,8 +6,9 @@ public class EndLine : MonoBehaviour
 {
     //List<PlayerController> playersFinished = new List<PlayerController>();
 
-    void OnTrigger2DEnter(Collider2D raft)
+    void OnTriggerEnter2D(Collider2D raft)
     {
+        Debug.Log("Raft has finished");
         if (LevelManager.instance.nbrRaftOver == 0)
             LevelManager.instance.winnerTeam = raft.GetComponent<RaftController>().teamId;
 
@@ -17,9 +18,9 @@ public class EndLine : MonoBehaviour
             EndGame();
     }
 
-    void EndGame(/*int WinnerID*/)
+    void EndGame()
     {
-        GetComponent<EndScreen>().EnableEndScreen(LevelManager.instance.winnerTeam);
+        EndScreen.instance.EnableEndScreen(LevelManager.instance.winnerTeam);
         //Time.timescale = 0f;
         Debug.Log("The winners are ... team " + LevelManager.instance.winnerTeam);
     }

@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class StopZone : MonoBehaviour
 {
-    public BoxCollider2D wall;
+    [SerializeField] BoxCollider2D wall;
     
-    private Animation anim;
+    [SerializeField] Animation anim;
     
-    private float time;
-    private float activationTime;
+    [SerializeField] float time;
+    [SerializeField] float activationTime;
 
-    private bool isInZone;
-    private bool isActive;
+    [SerializeField] bool isInZone;
+    [SerializeField] bool isActive;
     
     // Start is called before the first frame update
     void Start()
@@ -26,13 +26,15 @@ public class StopZone : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
+        Debug.Log("in park zone !");
         isInZone = true;
         time = 0;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-
+        
+        Debug.Log("Exit park zone !");
         isInZone = false;
     }
 
@@ -51,8 +53,9 @@ public class StopZone : MonoBehaviour
 
     private void ActiveWall()
     {
-        anim.Play("openBarrage");
+        Debug.Log("active wall");
         wall.enabled = false;
+        anim.Play("openBarrage");
         isActive = false;
         //Destroy(this, anim.clip.length);
     }
