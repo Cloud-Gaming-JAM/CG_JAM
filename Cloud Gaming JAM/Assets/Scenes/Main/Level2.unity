@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joyParent: {fileID: 1390349294}
+  over: 1
 --- !u!1 &744329839
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,7 +3652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7565335949427418644, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: debugControlMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7565335949427418646, guid: d3eeef42086cade41b85642d04109a1f, type: 3}
       propertyPath: m_Name

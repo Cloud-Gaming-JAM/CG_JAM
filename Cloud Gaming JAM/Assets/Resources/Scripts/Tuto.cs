@@ -6,13 +6,13 @@ using UnityEngine;
 public class Tuto : MonoBehaviour
 {
     public GameObject joyParent;
-    
-    float[] raftsPos = new float[LevelManager.instance.nbrRaftInGame];
-    bool over;
-    
+
+    float[] raftsPos /* = new float[LevelManager.instance.nbrRaftInGame]*/;
+    public bool over = true;
+
     void Update()
     {
-        if(!over)
+        if (!over)
             UpdateRaftPos();
     }
 
@@ -25,7 +25,7 @@ public class Tuto : MonoBehaviour
             if (raftsPos[i] > transform.position.x)
                 raftCrossed++;
         }
-        if(raftCrossed == raftsPos.Length)
+        if (raftCrossed == raftsPos.Length)
             DisableTuto();
     }
 
