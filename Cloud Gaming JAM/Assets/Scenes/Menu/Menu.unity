@@ -581,12 +581,16 @@ PrefabInstance:
       objectReference: {fileID: 968470507}
     - target: {fileID: 3975671515064236370, guid: 1ae1ba26ec218dd42959908c3680b548, type: 3}
       propertyPath: useAllRewiredGamePlayers
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7270666251753861203, guid: 1ae1ba26ec218dd42959908c3680b548, type: 3}
       propertyPath: rewiredInputManager
       value: 
       objectReference: {fileID: 968470507}
+    - target: {fileID: 7270666251753861203, guid: 1ae1ba26ec218dd42959908c3680b548, type: 3}
+      propertyPath: useAllRewiredGamePlayers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8085129785655109993, guid: 1ae1ba26ec218dd42959908c3680b548, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -679,6 +683,10 @@ PrefabInstance:
       propertyPath: rewiredInputManager
       value: 
       objectReference: {fileID: 968470507}
+    - target: {fileID: 8085129786506132456, guid: 1ae1ba26ec218dd42959908c3680b548, type: 3}
+      propertyPath: useAllRewiredGamePlayers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8085129786506132468, guid: 1ae1ba26ec218dd42959908c3680b548, type: 3}
       propertyPath: _alwaysUpdate
       value: 1
